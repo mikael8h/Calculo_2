@@ -1,4 +1,8 @@
-# Testes-C2
+# Calculo 2
+> Materiais de estudo e explicações. Nada muito sério e específico
+------
+
+## Testes
 Testes Para estudar Convergência de Séries e Sequências  
 
 # 📌 Teste da Série Alternada  
