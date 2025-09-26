@@ -1,5 +1,5 @@
 # Calculo 2
-> Materiais de estudo e explicações. Nada muito sério e específico
+> Materiais de estudo e explicações baseado no livro Calculo vol. 2 de George Thomas. Nada muito sério e específico
 ------
 
 
@@ -85,8 +85,134 @@ Se **nenhum número \(L\)** satisfaz essa definição, dizemos que a sequência 
 - \(N\) = ponto em que a sequência “entra na faixa” e não sai mais
 
 
-## Testes
+##  🧪 Testes
 Testes Para estudar Convergência de Séries e Sequências  
+
+# Teste do n-ésimo termo para uma série divergente
+<img width="883" height="593" alt="image" src="https://github.com/user-attachments/assets/4b14ee9f-65c6-48ea-8a26-e25cb04ebe7d" />
+
+# 📘 Teste do Termo n-ésimo
+
+O **Teste do Termo n-ésimo** é uma ferramenta fundamental no estudo de **séries infinitas**.  
+Ele estabelece uma condição necessária para a convergência de uma série.
+
+---
+
+## 🔹 A Regra Fundamental
+
+Para que a série
+
+\[
+\sum_{n=1}^{\infty} a_n
+\]
+
+converja (ou seja, tenha uma soma finita \(S\)), é necessário que:
+
+\[
+\lim_{n \to \infty} a_n = 0
+\]
+
+---
+
+## 💡 Intuição
+
+Imagine que você está tentando encher um copo (o limite \(S\)) com infinitas gotas (os termos \(a_n\)):
+
+- **Se as gotas nunca diminuem de tamanho:**  
+  Se \(a_n\) não tende a zero (por exemplo, \(a_n \to 0.5\)), você estará adicionando \(0.5 + 0.5 + 0.5 + \dots\).  
+  O copo nunca para de encher → **a série diverge**.
+
+- **Se as gotas ficam cada vez menores:**  
+  A única chance de convergência é se \(a_n \to 0\).  
+  Nesse caso, eventualmente, você estará adicionando "quase nada" ao copo.
+
+---
+
+## 📐 Demonstração Formal (Explicada)
+
+O argumento é feito usando **somas parciais**.
+
+1. **Definições**
+   - \(S\): o limite da série (soma total).  
+   - \(s_n\): a soma parcial até o termo \(n\).  
+     \[
+     s_n = a_1 + a_2 + \dots + a_n
+     \]  
+   - \(s_{n-1}\): a soma parcial anterior.  
+
+2. **Relação chave**
+   \[
+   a_n = s_n - s_{n-1}
+   \]
+
+3. **Cálculo do limite**
+   Se a série converge para \(S\), então:
+   \[
+   \lim_{n \to \infty} s_n = S \quad \text{e} \quad \lim_{n \to \infty} s_{n-1} = S
+   \]
+
+   Assim:
+   \[
+   \lim_{n \to \infty} a_n = \lim_{n \to \infty}(s_n - s_{n-1}) = S - S = 0
+   \]
+
+✅ Conclusão: **se a série converge, então obrigatoriamente \(a_n \to 0\).**
+
+---
+
+## 📊 Exemplo Prático (do Livro)
+
+Considere a série:
+
+\[
+\sum_{n=1}^{\infty} \frac{n}{n+1} = \frac{1}{2} + \frac{2}{3} + \frac{3}{4} + \dots
+\]
+
+- Termo geral:
+  \[
+  a_n = \frac{n}{n+1}
+  \]
+
+- Limite do termo:
+  \[
+  \lim_{n \to \infty} \frac{n}{n+1} = \lim_{n \to \infty} \left( 1 - \frac{1}{n+1} \right) = 1
+  \]
+
+- Como o limite \(\neq 0\), o teste garante que:
+  \[
+  \text{A série DIVERGE}
+  \]
+
+🔎 Intuição: no fim das contas, você está somando muitos números que são, essencialmente, iguais a 1.  
+E \(1 + 1 + 1 + \dots\) infinito → **diverge**.
+
+---
+
+## ⚠️ Observação Importante
+
+O Teste do Termo n-ésimo é útil principalmente para **provar divergência**:
+
+- Se \(\lim_{n \to \infty} a_n \neq 0\) → a série **diverge**. ✅  
+- Se \(\lim_{n \to \infty} a_n = 0\) → o teste é **inconclusivo**. ❌  
+
+Exemplo clássico:  
+\[
+\sum_{n=1}^{\infty} \frac{1}{n}
+\]
+Aqui \(a_n = \frac{1}{n} \to 0\), mas a série **diverge** (Série Harmônica).  
+
+Portanto, o teste do termo n-ésimo **não prova convergência**, apenas divergência.
+
+---
+## Conceitos de Séries Infinitas
+
+| Quem é?                          | Símbolo                                     | Função                                                         | Significado Intuitivo                                                                 |
+|----------------------------------|---------------------------------------------|----------------------------------------------------------------|---------------------------------------------------------------------------------------|
+| Teorema 7                        | Se ![equation](https://latex.codecogs.com/svg.latex?\sum_{n=1}^{\infty}a_n) converge, então ![equation](https://latex.codecogs.com/svg.latex?a_n\to0) | Condição necessária para convergência de uma série.            | Se os termos não vão a zero, a soma infinita não pode convergir.                      |
+| Teste do n-ésimo termo p/ divergência | ![equation](https://latex.codecogs.com/svg.latex?\sum_{n=1}^{\infty}a_n) diverge se ![equation](https://latex.codecogs.com/svg.latex?\lim_{n\to\infty}a_n\neq0) ou não existe | Critério prático para identificar séries divergentes.          | Se os termos não tendem a zero, a soma infinita “explode” (não converge).             |
+
+--- 
+
 
 # 📌 Teste da Série Alternada  
 
