@@ -2,6 +2,89 @@
 > Materiais de estudo e explicações. Nada muito sério e específico
 ------
 
+
+<img width="619" height="202" alt="image" src="https://github.com/user-attachments/assets/6482f3c5-ce9f-4433-8bdf-60db4c20541c" />
+
+## Definição Formal de Limite de uma Sequência (ϵ−N)
+
+A **definição épsilon-N** é o pilar da análise de convergência em Matemática.  
+Embora pareça complexa à primeira vista, o conceito é bastante intuitivo.  
+
+---
+
+## 🔹 Regra de Convergência
+
+Uma sequência \(\{a_n\}\) **converge** para um número \(L\) se:
+
+\[
+\forall \, \epsilon > 0 \; \exists \, N \in \mathbb{N} \; \text{tal que} \; \forall n > N \implies |a_n - L| < \epsilon
+\]
+
+👉 Em outras palavras: **não importa o quão perto você queira que os termos da sequência cheguem de \(L\), eles sempre chegarão (e permanecerão próximos).**
+
+---
+
+## 📌 Elementos da Definição
+
+### 1. O que é \(L\)?
+- **Limite**: É o valor para o qual a sequência está "apontando" e se aproximando.  
+- Pense em \(L\) como o **alvo** da sequência.
+
+---
+
+### 2. O Papel do \(\epsilon\) (Épsilon)
+- **Distância (Tolerância)**: É um número positivo arbitrariamente pequeno \((\epsilon > 0)\).  
+- Representa a **margem de erro** ou a distância máxima permitida entre \(a_n\) e \(L\).  
+
+> ⚠️ Importante: você **não escolhe** o \(\epsilon\). Ele é dado como um **desafio**, podendo ser minúsculo (ex.: 0.000001).
+
+---
+
+### 3. A Condição \(|a_n - L| < \epsilon\)
+- **Proximidade**: Essa desigualdade significa que \(a_n\) está a menos de \(\epsilon\) unidades de distância de \(L\).  
+- Equivalente a dizer que:
+
+\[
+a_n \in (L - \epsilon, \, L + \epsilon)
+\]
+
+Ou seja, os termos da sequência ficam **dentro de uma faixa de tolerância** em torno de \(L\).
+
+---
+
+### 4. O Papel do \(N\) (Êne)
+- **Índice de Viragem**: É um número natural que marca o ponto a partir do qual **todos os termos da sequência** satisfazem a proximidade exigida.  
+- Se \(N = 100\), isso significa que:
+
+\[
+a_{101}, a_{102}, a_{103}, \dots
+\]
+
+estão todos dentro da faixa \((L - \epsilon, \, L + \epsilon)\).  
+
+- Quanto **menor** o \(\epsilon\), **maior** o \(N\) necessário.
+
+---
+
+## 🚨 Quando não existe limite
+Se **nenhum número \(L\)** satisfaz essa definição, dizemos que a sequência **diverge**.
+
+---
+## 📖 Quem é quem na Definição de Limite (ϵ−N)
+
+| **Quem é?** | **Símbolo** | **Função**                                   | **Significado Intuitivo** |
+|-------------|-------------|-----------------------------------------------|----------------------------|
+| Limite      | \(L\)       | O alvo da sequência.                         | O número para onde a sequência está indo. |
+| Epsilon     | ε\(\epsilon\)| A margem de erro ou exigência de proximidade. | O desafio: "Quão perto eu quero que a sequência chegue de \(L\)?" |
+| Êne         | \(N\)       | O índice a partir do qual a exigência é cumprida. | A resposta: "A partir de qual termo \(N\) a sequência fica e permanece dentro dessa proximidade \(\epsilon\)?" |
+
+## ✅ Resumindo Intuitivamente
+- \(L\) = alvo da sequência  
+- \(\epsilon\) = margem de erro  
+- \(|a_n - L| < \epsilon\) = proximidade desejada  
+- \(N\) = ponto em que a sequência “entra na faixa” e não sai mais
+
+
 ## Testes
 Testes Para estudar Convergência de Séries e Sequências  
 
