@@ -77,11 +77,10 @@ Se **nenhum número $L$** satisfaz essa definição, dizemos que a sequência **
 - $|a_n - L| < \epsilon$ = proximidade desejada  
 - $N$ = ponto em que a sequência “entra na faixa” e não sai mais
 
-# Algoritmo para Verificar se uma Série é Geométrica
-
-O objetivo é verificar se a razão entre termos consecutivos é constante.
-
 ---
+
+## Algoritmo para Verificar se uma Série é Geométrica
+>O objetivo é verificar se a razão entre termos consecutivos é constante.
 
 ## Entrada
 - O termo geral da série: $a_n$.
@@ -167,7 +166,7 @@ Para que a série
 
 $\sum_{n=1}^{\infty} a_n$
 
-converja (ou seja, tenha uma soma finita \(S\)), é necessário que:
+converja (ou seja, tenha uma soma finita $S$), é necessário que:
 
 $\lim_{n \to \infty} a_n = 0$
 
@@ -175,14 +174,14 @@ $\lim_{n \to \infty} a_n = 0$
 
 ## 💡 Intuição
 
-Imagine que você está tentando encher um copo (o limite $\(S\)$) com infinitas gotas (os termos $\(a_n\)$):
+Imagine que você está tentando encher um copo (o limite $S$) com infinitas gotas (os termos $a_n$):
 
 - **Se as gotas nunca diminuem de tamanho:**  
-  Se $\(a_n\)$ não tende a zero (por exemplo, $\(a_n \to 0.5\)$), você estará adicionando $\(0.5 + 0.5 + 0.5 + \dots\)$.  
+  Se $a_n$ não tende a zero (por exemplo, $a_n \to 0.5$), você estará adicionando $0.5 + 0.5 + 0.5 + \dots$.  
   O copo nunca para de encher → **a série diverge**.
 
 - **Se as gotas ficam cada vez menores:**  
-  A única chance de convergência é se $\(a_n \to 0\)$.  
+  A única chance de convergência é se $a_n \to 0$.  
   Nesse caso, eventualmente, você estará adicionando "quase nada" ao copo.
 
 ---
