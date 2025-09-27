@@ -105,7 +105,7 @@ Se **nenhum número $L$** satisfaz essa definição, dizemos que a sequência **
 ### **Passo 2: Calcule a Razão (r)**
 A razão é dada por:
 
-$$ r = \frac{a_{n+1}}{a_n} $$
+$$r = \frac{a_{n+1}}{a_n}$$
 
 Simplifique a expressão o máximo possível.
 
@@ -121,13 +121,13 @@ Simplifique a expressão o máximo possível.
 
 ### ✅ Exemplo 1: Série Geométrica
 Seja:  
-$$ a_n = \frac{5^n}{4} $$
+$$a_n = \frac{5^n}{4}$$
 
 O termo seguinte:  
-$$ a_{n+1} = \frac{5^{n+1}}{4} $$
+$$a_{n+1} = \frac{5^{n+1}}{4}$$
 
 Calcule a razão:  
-$$ r = \frac{a_{n+1}}{a_n} = \frac{\tfrac{5^{n+1}}{4}}{\tfrac{5^n}{4}} = \frac{5^{n+1}}{5^n} = 5 $$
+$$r = \frac{a_{n+1}}{a_n} = \frac{\tfrac{5^{n+1}}{4}}{\tfrac{5^n}{4}} = \frac{5^{n+1}}{5^n} = 5$$
 
 Como $r = 5$ é constante:  
 **Conclusão:** A série é geométrica com razão $r=5$.
@@ -136,13 +136,13 @@ Como $r = 5$ é constante:
 
 ### ❌ Exemplo 2: Série NÃO Geométrica
 Seja:  
-$$ a_n = \frac{2^n}{n} $$
+$$a_n = \frac{2^n}{n}$$
 
 O termo seguinte:  
-$$ a_{n+1} = \frac{2^{n+1}}{n+1} $$
+$$a_{n+1} = \frac{2^{n+1}}{n+1}$$
 
 Calcule a razão:  
-$$ r = \frac{a_{n+1}}{a_n} = \frac{\tfrac{2^{n+1}}{n+1}}{\tfrac{2^n}{n}} = \frac{2^{n+1}}{n+1} \cdot \frac{n}{2^n} = \frac{2n}{n+1} $$
+$$r = \frac{a_{n+1}}{a_n} = \frac{\tfrac{2^{n+1}}{n+1}}{\tfrac{2^n}{n}} = \frac{2^{n+1}}{n+1} \cdot \frac{n}{2^n} = \frac{2n}{n+1}$$
 
 Como $r$ depende de $n$ (ex.: para $n=1$, $r=1$; para $n=2$, $r=\tfrac{4}{3}$):  
 **Conclusão:** A série não é geométrica.
