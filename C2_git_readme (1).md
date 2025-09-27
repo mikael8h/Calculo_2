@@ -50,9 +50,11 @@ Ou seja, os termos da sequência ficam **dentro de uma faixa de tolerância** em
 - **Índice de Viragem**: É um número natural que marca o ponto a partir do qual **todos os termos da sequência** satisfazem a proximidade exigida.  
 - Se $\(N = 100\)$, isso significa que:
 
-  $a_{101}, a_{102}, a_{103}, \dots$ estão todos dentro da faixa $(L - \epsilon, \, L + \epsilon)$.  
+$a_{101}, a_{102}, a_{103}, \dots$
 
-- Quanto **menor** o $\epsilon$, **maior** o $N$ necessário.
+estão todos dentro da faixa $(L - \epsilon, \, L + \epsilon)$.  
+
+- Quanto **menor** o $\epsilon$, **maior** o $N necessário$.
 
 ---
 
@@ -94,7 +96,7 @@ Para que a série
 
 $\sum_{n=1}^{\infty} a_n$
 
-converja (ou seja, tenha uma soma finita S), é necessário que:
+converja (ou seja, tenha uma soma finita \(S\)), é necessário que:
 
 $\lim_{n \to \infty} a_n = 0$
 
@@ -102,10 +104,10 @@ $\lim_{n \to \infty} a_n = 0$
 
 ## 💡 Intuição
 
-Imagine que você está tentando encher um copo (o limite $S$) com infinitas gotas (os termos $a_n$):
+Imagine que você está tentando encher um copo (o limite $\(S\)$) com infinitas gotas (os termos $\(a_n\)$):
 
 - **Se as gotas nunca diminuem de tamanho:**  
-  Se $a_n$ não tende a zero (por exemplo, $a_n \to 0.5$), você estará adicionando $0.5 + 0.5 + 0.5 + \dots$.  
+  Se $\(a_n\)$ não tende a zero (por exemplo, $\(a_n \to 0.5\)$), você estará adicionando $\(0.5 + 0.5 + 0.5 + \dots\)$.  
   O copo nunca para de encher → **a série diverge**.
 
 - **Se as gotas ficam cada vez menores:**  
@@ -166,8 +168,7 @@ O Teste do Termo n-ésimo é útil principalmente para **provar divergência**:
 - Se $\lim_{n \to \infty} a_n = 0$ → o teste é **inconclusivo**. ❌  
 
 Exemplo clássico:  
-$$\sum_{n=1}^{\infty} \frac{1}{n}$$  
-
+$$\sum_{n=1}^{\infty} \frac{1}{n}$$
 Aqui $a_n = \frac{1}{n} \to 0$, mas a série **diverge** (Série Harmônica).  
 
 Portanto, o teste do termo n-ésimo **não prova convergência**, apenas divergência.
