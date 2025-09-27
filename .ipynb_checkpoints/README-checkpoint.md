@@ -77,16 +77,16 @@ Se **nenhum número $L$** satisfaz essa definição, dizemos que a sequência **
 - $|a_n - L| < \epsilon$ = proximidade desejada  
 - $N$ = ponto em que a sequência “entra na faixa” e não sai mais
 
-# Algoritmo para Verificar se uma Série é Geométrica
-
-O objetivo é verificar se a razão entre termos consecutivos é constante.
-
 ---
+
+## Algoritmo para Verificar se uma Série é Geométrica
+>O objetivo é verificar se a razão entre termos consecutivos é constante.
 
 ## Entrada
 - O termo geral da série: $a_n$.
 -  
-  *Exemplo: $a_n = \frac{5^n}{4}$*
+  *Exemplo:*
+    $a_n = \frac{5^n}{4}$
 
 ## Saída
 - **SIM, é Geométrica:** mostra a razão comum $r$.  
@@ -105,7 +105,7 @@ O objetivo é verificar se a razão entre termos consecutivos é constante.
 ### **Passo 2: Calcule a Razão (r)**
 A razão é dada por:
 
-$$ r = \frac{a_{n+1}}{a_n} $$
+$$r = \frac{a_{n+1}}{a_n}$$
 
 Simplifique a expressão o máximo possível.
 
@@ -121,13 +121,13 @@ Simplifique a expressão o máximo possível.
 
 ### ✅ Exemplo 1: Série Geométrica
 Seja:  
-$$ a_n = \frac{5^n}{4} $$
+$$a_n = \frac{5^n}{4}$$
 
 O termo seguinte:  
-$$ a_{n+1} = \frac{5^{n+1}}{4} $$
+$$a_{n+1} = \frac{5^{n+1}}{4}$$
 
 Calcule a razão:  
-$$ r = \frac{a_{n+1}}{a_n} = \frac{\tfrac{5^{n+1}}{4}}{\tfrac{5^n}{4}} = \frac{5^{n+1}}{5^n} = 5 $$
+$$r = \frac{a_{n+1}}{a_n} = \frac{\tfrac{5^{n+1}}{4}}{\tfrac{5^n}{4}} = \frac{5^{n+1}}{5^n} = 5$$
 
 Como $r = 5$ é constante:  
 **Conclusão:** A série é geométrica com razão $r=5$.
@@ -136,13 +136,13 @@ Como $r = 5$ é constante:
 
 ### ❌ Exemplo 2: Série NÃO Geométrica
 Seja:  
-$$ a_n = \frac{2^n}{n} $$
+$$a_n = \frac{2^n}{n}$$
 
 O termo seguinte:  
-$$ a_{n+1} = \frac{2^{n+1}}{n+1} $$
+$$a_{n+1} = \frac{2^{n+1}}{n+1}$$
 
 Calcule a razão:  
-$$ r = \frac{a_{n+1}}{a_n} = \frac{\tfrac{2^{n+1}}{n+1}}{\tfrac{2^n}{n}} = \frac{2^{n+1}}{n+1} \cdot \frac{n}{2^n} = \frac{2n}{n+1} $$
+$$r = \frac{a_{n+1}}{a_n} = \frac{\tfrac{2^{n+1}}{n+1}}{\tfrac{2^n}{n}} = \frac{2^{n+1}}{n+1} \cdot \frac{n}{2^n} = \frac{2n}{n+1}$$
 
 Como $r$ depende de $n$ (ex.: para $n=1$, $r=1$; para $n=2$, $r=\tfrac{4}{3}$):  
 **Conclusão:** A série não é geométrica.
@@ -166,7 +166,7 @@ Para que a série
 
 $\sum_{n=1}^{\infty} a_n$
 
-converja (ou seja, tenha uma soma finita \(S\)), é necessário que:
+converja (ou seja, tenha uma soma finita $S$), é necessário que:
 
 $\lim_{n \to \infty} a_n = 0$
 
@@ -174,14 +174,14 @@ $\lim_{n \to \infty} a_n = 0$
 
 ## 💡 Intuição
 
-Imagine que você está tentando encher um copo (o limite $\(S\)$) com infinitas gotas (os termos $\(a_n\)$):
+Imagine que você está tentando encher um copo (o limite $S$) com infinitas gotas (os termos $a_n$):
 
 - **Se as gotas nunca diminuem de tamanho:**  
-  Se $\(a_n\)$ não tende a zero (por exemplo, $\(a_n \to 0.5\)$), você estará adicionando $\(0.5 + 0.5 + 0.5 + \dots\)$.  
+  Se $a_n$ não tende a zero (por exemplo, $a_n \to 0.5$), você estará adicionando $0.5 + 0.5 + 0.5 + \dots$.  
   O copo nunca para de encher → **a série diverge**.
 
 - **Se as gotas ficam cada vez menores:**  
-  A única chance de convergência é se $\(a_n \to 0\)$.  
+  A única chance de convergência é se $a_n \to 0$.  
   Nesse caso, eventualmente, você estará adicionando "quase nada" ao copo.
 
 ---
