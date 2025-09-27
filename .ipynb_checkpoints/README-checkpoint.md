@@ -1,3 +1,4 @@
+
 # Calculo 2
 > Materiais de estudo e explicações baseado no livro Calculo vol. 2 de George Thomas. Nada muito sério e específico
 ------
@@ -42,13 +43,13 @@ $\forall \, \epsilon > 0 \; \exists \, N \in \mathbb{N} \; \text{tal que} \; \fo
 - Equivalente a dizer que:
 $a_n \in (L - \epsilon, \, L + \epsilon)$
 
-Ou seja, os termos da sequência ficam **dentro de uma faixa de tolerância** em torno de $\(L\)$.
+Ou seja, os termos da sequência ficam **dentro de uma faixa de tolerância** em torno de $L$.
 
 ---
 
-### 4. O Papel do \(N\) (Êne)
+### 4. O Papel do N (Êne)
 - **Índice de Viragem**: É um número natural que marca o ponto a partir do qual **todos os termos da sequência** satisfazem a proximidade exigida.  
-- Se $\(N = 100\)$, isso significa que:
+- Se $N = 100$, isso significa que:
 
 $a_{101}, a_{102}, a_{103}, \dots$
 
@@ -83,8 +84,9 @@ O objetivo é verificar se a razão entre termos consecutivos é constante.
 ---
 
 ## Entrada
-- O termo geral da série: $a_n$.  
-  *(Exemplo: $a_n = \frac{5^n}{4}$)*
+- O termo geral da série: $a_n$.
+-  
+  *Exemplo: $a_n = \frac{5^n}{4}$*
 
 ## Saída
 - **SIM, é Geométrica:** mostra a razão comum $r$.  

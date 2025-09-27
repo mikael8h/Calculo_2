@@ -84,8 +84,9 @@ O objetivo é verificar se a razão entre termos consecutivos é constante.
 ---
 
 ## Entrada
-- O termo geral da série: $a_n$.  
-  *(Exemplo: $a_n = \frac{5^n}{4}$)*
+- O termo geral da série: $a_n$.
+-  
+  *Exemplo: $a_n = \frac{5^n}{4}$*
 
 ## Saída
 - **SIM, é Geométrica:** mostra a razão comum $r$.  
