@@ -115,6 +115,9 @@ Nesse caso, também escrevemos:
 $$a_1 + a_2 + \cdots + a_n + \cdots = \sum_{n=1}^{\infty} a_n = L$$
 
 Se a sequência de somas parciais da série não converge, dizemos que a série diverge.
+
+<img width="987" height="285" alt="image" src="https://github.com/user-attachments/assets/fa9568fa-6fca-4df4-9618-64effd8ca8f1" />
+Podemos somar séries termo a termo, subtrair e multiplicar por constantes sem alterar a convervência ou divergência
  
 ---
 
