@@ -79,6 +79,45 @@ Se **nenhum número $L$** satisfaz essa definição, dizemos que a sequência **
 
 ---
 
+# ♾️Séries infinitas 
+
+
+>## Definições: Séries Infinitas e Convergência
+
+Dada a sequência de números $\{a_n\}$, uma expressão da forma:
+
+$$a_1 + a_2 + a_3 + \cdots + a_n + \cdots$$
+
+é uma série infinita. O número $a_n$ é o n-ésimo termo da série.
+
+---
+
+## Sequência de Somas Parciais
+A sequência $\{s_n\}$ é definida por:
+
+$$s_1 = a_1$$
+
+$$s_2 = a_1 + a_2$$
+
+$$\vdots$$
+
+$$s_n = a_1 + a_2 + \cdots + a_n = \sum_{k=1}^n a_k$$
+
+Esta é a sequência de somas parciais da série, sendo o número $s_n$ a n-ésima soma parcial.
+
+---
+
+## Convergência e Divergência
+Se a sequência de somas parciais $\{s_n\}$ convergir para um limite $L$, dizemos que a série converge e que a soma é $L$.
+
+Nesse caso, também escrevemos:
+
+$$a_1 + a_2 + \cdots + a_n + \cdots = \sum_{n=1}^{\infty} a_n = L$$
+
+Se a sequência de somas parciais da série não converge, dizemos que a série diverge.
+ 
+---
+
 ## Algoritmo para Verificar se uma Série é Geométrica
 >O objetivo é verificar se a razão entre termos consecutivos é constante.
 
