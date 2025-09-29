@@ -436,9 +436,14 @@ graph TD
 
 
 
+ ## 💡 Informações pertinemtes:
 
+ - Regras basicas de lgarítmo:
 
+ -> $ln(a/b) = ln(a) - ln(b)$
 
-```python
+ -> $ln(a.b) = ln(a) + ln(b)$
 
-```
+ -> $ln(a^n) = nln(a)$
+
+ ---
