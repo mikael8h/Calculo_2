@@ -191,6 +191,22 @@ $$r = \frac{a_{n+1}}{a_n} = \frac{\tfrac{2^{n+1}}{n+1}}{\tfrac{2^n}{n}} = \frac{
 Como $r$ depende de $n$ (ex.: para $n=1$, $r=1$; para $n=2$, $r=\tfrac{4}{3}$):  
 **Conclusão:** A série não é geométrica.
 
+---
+## Conceitos de Séries Infinitas
+
+| Quem é?                          | Símbolo                                     | Função                                                         | Significado Intuitivo                                                                 |
+|----------------------------------|---------------------------------------------|----------------------------------------------------------------|---------------------------------------------------------------------------------------|
+| Teorema 7                        | Se ![equation](https://latex.codecogs.com/svg.latex?\sum_{n=1}^{\infty}a_n) converge, então ![equation](https://latex.codecogs.com/svg.latex?a_n\to0) | Condição necessária para convergência de uma série.            | Se os termos não vão a zero, a soma infinita não pode convergir.                      |
+| Teste do n-ésimo termo p/ divergência | ![equation](https://latex.codecogs.com/svg.latex?\sum_{n=1}^{\infty}a_n) diverge se ![equation](https://latex.codecogs.com/svg.latex?\lim_{n\to\infty}a_n\neq0) ou não existe | Critério prático para identificar séries divergentes.          | Se os termos não tendem a zero, a soma infinita “explode” (não converge).             |
+
+--- 
+<img width="631" height="401" alt="image" src="https://github.com/user-attachments/assets/d5d97d36-2e31-482a-bd55-36036bb3d6f8" />
+
+---
+<img width="984" height="596" alt="image" src="https://github.com/user-attachments/assets/3339e1c2-891a-428c-b3ad-556192ba29e5" />
+
+---
+
 ##  🧪 Testes
 Testes Para estudar Convergência de Séries e Sequências  
 
@@ -286,20 +302,6 @@ $$\sum_{n=1}^{\infty} \frac{1}{n}$$
 Aqui $a_n = \frac{1}{n} \to 0$, mas a série **diverge** (Série Harmônica).  
 
 Portanto, o teste do termo n-ésimo **não prova convergência**, apenas divergência.
-
----
-## Conceitos de Séries Infinitas
-
-| Quem é?                          | Símbolo                                     | Função                                                         | Significado Intuitivo                                                                 |
-|----------------------------------|---------------------------------------------|----------------------------------------------------------------|---------------------------------------------------------------------------------------|
-| Teorema 7                        | Se ![equation](https://latex.codecogs.com/svg.latex?\sum_{n=1}^{\infty}a_n) converge, então ![equation](https://latex.codecogs.com/svg.latex?a_n\to0) | Condição necessária para convergência de uma série.            | Se os termos não vão a zero, a soma infinita não pode convergir.                      |
-| Teste do n-ésimo termo p/ divergência | ![equation](https://latex.codecogs.com/svg.latex?\sum_{n=1}^{\infty}a_n) diverge se ![equation](https://latex.codecogs.com/svg.latex?\lim_{n\to\infty}a_n\neq0) ou não existe | Critério prático para identificar séries divergentes.          | Se os termos não tendem a zero, a soma infinita “explode” (não converge).             |
-
---- 
-<img width="631" height="401" alt="image" src="https://github.com/user-attachments/assets/d5d97d36-2e31-482a-bd55-36036bb3d6f8" />
-
----
-<img width="984" height="596" alt="image" src="https://github.com/user-attachments/assets/3339e1c2-891a-428c-b3ad-556192ba29e5" />
 
 ---
 
