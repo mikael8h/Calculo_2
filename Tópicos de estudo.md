@@ -1,0 +1,13 @@
+## Títulos a pesquisar:
+
+# Convergência absoluta.
+
+--Estudar o funcionamento da convergencia absoluta e a implicação na convergencia geral 
+
+# P-séries
+
+--Aplicações e estrutura de P-séries.
+
+# Funçoes no formato f(x,y(x) 
+
+--estudar linearidade e como reescrever isso
