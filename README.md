@@ -876,7 +876,197 @@ graph TD
     L_inf -- Não --> M;
 
 ```
+---
+# Teste da Razão - Guia Completo com Exemplos
 
+## 📐 O que é o Teste da Razão?
+
+O **Teste da Razão** (ou Teste de d'Alembert) é uma ferramenta poderosa para determinar se uma série infinita converge ou diverge. Ele é especialmente útil para séries que envolvem **fatoriais**, **exponenciais** ou **potências**.
+
+---
+
+## 🎯 Enunciado do Teste
+
+Dada uma série $\displaystyle \sum_{n=1}^{\infty} a_n$ com termos **positivos**, calculamos:
+
+$$L = \lim_{n \to \infty} \frac{a_{n+1}}{a_n}$$
+
+Então:
+
+| Valor de $L$ | Conclusão |
+|:------------:|:---------:|
+| $L < 1$ | A série **CONVERGE** ✓ |
+| $L > 1$ | A série **DIVERGE** ✗ |
+| $L = 1$ | O teste é **INCONCLUSIVO** ❓ |
+
+---
+
+## 📝 Passo a Passo para Aplicar
+
+### **Etapa 1:** Identifique o termo geral $a_n$
+
+### **Etapa 2:** Escreva o próximo termo $a_{n+1}$
+
+### **Etapa 3:** Monte a razão $\displaystyle \frac{a_{n+1}}{a_n}$
+
+### **Etapa 4:** Simplifique a expressão
+
+### **Etapa 5:** Calcule $\displaystyle \lim_{n \to \infty} \frac{a_{n+1}}{a_n}$
+
+### **Etapa 6:** Compare com 1 e conclua
+
+---
+
+## 💡 Exemplo 1: Série com Exponencial
+
+**Determine se a série converge:** $\displaystyle \sum_{n=1}^{\infty} \frac{2^n}{n!}$
+
+### Solução:
+
+**Etapa 1:** $a_n = \displaystyle \frac{2^n}{n!}$
+
+**Etapa 2:** $a_{n+1} = \displaystyle \frac{2^{n+1}}{(n+1)!}$
+
+**Etapa 3:** 
+$$\frac{a_{n+1}}{a_n} = \frac{2^{n+1}}{(n+1)!} \cdot \frac{n!}{2^n}$$
+
+**Etapa 4:** 
+$$\frac{a_{n+1}}{a_n} = \frac{2^{n+1}}{2^n} \cdot \frac{n!}{(n+1)!} = 2 \cdot \frac{n!}{(n+1) \cdot n!} = \frac{2}{n+1}$$
+
+**Etapa 5:** 
+$$L = \lim_{n \to \infty} \frac{2}{n+1} = 0$$
+
+**Etapa 6:** Como $L = 0 < 1$, a série **CONVERGE** ✓
+
+---
+
+## 💡 Exemplo 2: Série com Potência
+
+**Determine se a série converge:** $\displaystyle \sum_{n=1}^{\infty} \frac{n^2}{3^n}$
+
+### Solução:
+
+**Etapa 1:** $a_n = \displaystyle \frac{n^2}{3^n}$
+
+**Etapa 2:** $a_{n+1} = \displaystyle \frac{(n+1)^2}{3^{n+1}}$
+
+**Etapa 3:** 
+$$\frac{a_{n+1}}{a_n} = \frac{(n+1)^2}{3^{n+1}} \cdot \frac{3^n}{n^2}$$
+
+**Etapa 4:** 
+$$\frac{a_{n+1}}{a_n} = \frac{(n+1)^2}{n^2} \cdot \frac{3^n}{3^{n+1}} = \left(\frac{n+1}{n}\right)^2 \cdot \frac{1}{3}$$
+
+**Etapa 5:** 
+$$L = \lim_{n \to \infty} \left(\frac{n+1}{n}\right)^2 \cdot \frac{1}{3} = \lim_{n \to \infty} \left(1 + \frac{1}{n}\right)^2 \cdot \frac{1}{3} = 1 \cdot \frac{1}{3} = \frac{1}{3}$$
+
+**Etapa 6:** Como $L = \frac{1}{3} < 1$, a série **CONVERGE** ✓
+
+---
+
+## 💡 Exemplo 3: Série Divergente
+
+**Determine se a série converge:** $\displaystyle \sum_{n=1}^{\infty} \frac{n! \cdot 3^n}{2^n}$
+
+### Solução:
+
+**Etapa 1:** $a_n = \displaystyle \frac{n! \cdot 3^n}{2^n}$
+
+**Etapa 2:** $a_{n+1} = \displaystyle \frac{(n+1)! \cdot 3^{n+1}}{2^{n+1}}$
+
+**Etapa 3:** 
+$$\frac{a_{n+1}}{a_n} = \frac{(n+1)! \cdot 3^{n+1}}{2^{n+1}} \cdot \frac{2^n}{n! \cdot 3^n}$$
+
+**Etapa 4:** 
+$$\frac{a_{n+1}}{a_n} = \frac{(n+1) \cdot n!}{n!} \cdot \frac{3^{n+1}}{3^n} \cdot \frac{2^n}{2^{n+1}} = (n+1) \cdot 3 \cdot \frac{1}{2} = \frac{3(n+1)}{2}$$
+
+**Etapa 5:** 
+$$L = \lim_{n \to \infty} \frac{3(n+1)}{2} = \infty$$
+
+**Etapa 6:** Como $L = \infty > 1$, a série **DIVERGE** ✗
+
+---
+
+## 💡 Exemplo 4: Caso Inconclusivo
+
+**Determine se a série converge:** $\displaystyle \sum_{n=1}^{\infty} \frac{1}{n^2}$
+
+### Solução:
+
+**Etapa 1:** $a_n = \displaystyle \frac{1}{n^2}$
+
+**Etapa 2:** $a_{n+1} = \displaystyle \frac{1}{(n+1)^2}$
+
+**Etapa 3:** 
+$$\frac{a_{n+1}}{a_n} = \frac{1}{(n+1)^2} \cdot n^2 = \frac{n^2}{(n+1)^2}$$
+
+**Etapa 4:** 
+$$\frac{a_{n+1}}{a_n} = \left(\frac{n}{n+1}\right)^2$$
+
+**Etapa 5:** 
+$$L = \lim_{n \to \infty} \left(\frac{n}{n+1}\right)^2 = \lim_{n \to \infty} \left(\frac{1}{1 + \frac{1}{n}}\right)^2 = 1$$
+
+**Etapa 6:** Como $L = 1$, o teste é **INCONCLUSIVO** ❓
+
+> **Nota:** Neste caso, precisamos usar outro teste. Esta série converge pelo teste da p-série ($p = 2 > 1$).
+
+---
+
+## 🎓 Dicas Importantes
+
+### ✅ Quando usar o Teste da Razão:
+
+- Séries com **fatoriais**: $n!$, $(2n)!$
+- Séries com **exponenciais**: $a^n$, $e^n$
+- Séries com **potências de n** combinadas com exponenciais
+- Séries que envolvem produtos de termos
+
+### ⚠️ Quando NÃO usar o Teste da Razão:
+
+- Séries p: $\displaystyle \sum \frac{1}{n^p}$ (o limite sempre será 1)
+- Quando o limite resulta em 1 (teste inconclusivo)
+- Séries alternadas simples (use o teste de Leibniz)
+
+### 🔑 Macetes para Simplificação:
+
+1. **Fatoriais:** $(n+1)! = (n+1) \cdot n!$
+2. **Exponenciais:** $a^{n+1} = a \cdot a^n$
+3. **Cancelamento:** Sempre cancele termos comuns antes de calcular o limite
+
+---
+
+## 🧮 Exercícios Propostos
+
+Determine se as séries convergem:
+
+1. $\displaystyle \sum_{n=1}^{\infty} \frac{5^n}{n^3}$
+
+2. $\displaystyle \sum_{n=1}^{\infty} \frac{n!}{10^n}$
+
+3. $\displaystyle \sum_{n=1}^{\infty} \frac{2^n \cdot n^2}{n!}$
+
+4. $\displaystyle \sum_{n=1}^{\infty} \frac{(n!)^2}{(2n)!}$
+
+---
+
+## 📚 Resumo Visual
+
+```
+          Calcule L = lim(n→∞) [aₙ₊₁/aₙ]
+                        |
+            ┌───────────┴───────────┐
+            |                       |
+         L < 1                   L > 1
+            |                       |
+       CONVERGE ✓              DIVERGE ✗
+            
+         (L = 1 → INCONCLUSIVO)
+```
+
+---
+
+## 🎯 Conclusão
+
+O Teste da Razão é uma ferramenta essencial no estudo de séries infinitas. Sua principal vantagem é a simplicidade de aplicação em séries com fatoriais e exponenciais. Lembre-se: quando o teste resulta em $L = 1$, você precisará usar outros métodos para determinar a convergência!
 
 # 📌 Teste da Série Alternada  
 
@@ -1085,5 +1275,149 @@ $\sum \frac{1}{n^p}$
 
 converge **somente se $p > 1$** é uma das ferramentas principais para estudar séries em Cálculo 2.
  
-
  ---
+
+ # Prova do Teste da Razão
+
+## 📋 Enunciado do Teorema
+
+**Teste da Razão:** Seja $\sum a_n$ uma série com termos positivos. Se
+
+$$\lim_{n \to \infty} \frac{a_{n+1}}{a_n} = \rho$$
+
+então:
+- Se $\rho < 1$, a série **converge**
+- Se $\rho > 1$, a série **diverge**
+- Se $\rho = 1$, o teste é **inconclusivo**
+
+---
+
+## ✅ Demonstração do Caso: $\rho < 1$
+
+### Passo 1: Escolha de $r$ e $\varepsilon$
+
+Como $\rho < 1$, podemos escolher um número $r$ tal que:
+
+$$\rho < r < 1$$
+
+Definimos então $\varepsilon = r - \rho > 0$, de modo que:
+
+$$\rho + \varepsilon = r < 1$$
+
+> **Objetivo:** Usar $r$ como razão de uma série geométrica convergente que "domina" nossa série.
+
+---
+
+### Passo 2: Aplicação da Definição de Limite
+
+Como $\displaystyle \lim_{n \to \infty} \frac{a_{n+1}}{a_n} = \rho$, pela definição de limite:
+
+Para o $\varepsilon > 0$ escolhido, existe $N \in \mathbb{N}$ tal que para todo $n \geq N$:
+
+$$\frac{a_{n+1}}{a_n} < \rho + \varepsilon = r$$
+
+> **Interpretação:** A partir de um certo índice $N$, a razão entre termos consecutivos fica consistentemente menor que $r$.
+
+---
+
+### Passo 3: Construção das Desigualdades em Cadeia
+
+Aplicando repetidamente a desigualdade $\frac{a_{n+1}}{a_n} < r$ para $n \geq N$:
+
+$$\begin{align}
+a_{N+1} &< r \cdot a_N \\
+a_{N+2} &< r \cdot a_{N+1} < r^2 \cdot a_N \\
+a_{N+3} &< r \cdot a_{N+2} < r^3 \cdot a_N \\
+&\vdots \\
+a_{N+m} &< r \cdot a_{N+m-1} < r^m \cdot a_N
+\end{align}$$
+
+> **Visualização:** Cada termo após $a_N$ é limitado superiormente por múltiplos de potências de $r$.
+
+---
+
+### Passo 4: Construção da Série Auxiliar
+
+Definimos uma série auxiliar $\sum c_n$ onde:
+
+$$c_n = \begin{cases}
+a_n & \text{se } n = 1, 2, \ldots, N \\
+r^{n-N} \cdot a_N & \text{se } n > N
+\end{cases}$$
+
+Então:
+
+$$\begin{align}
+\sum_{n=1}^{\infty} c_n &= a_1 + a_2 + \cdots + a_{N-1} + a_N + ra_N + r^2a_N + r^3a_N + \cdots \\
+&= \underbrace{a_1 + a_2 + \cdots + a_{N-1}}_{\text{soma finita}} + a_N \underbrace{(1 + r + r^2 + r^3 + \cdots)}_{\text{série geométrica}}
+\end{align}$$
+
+---
+
+### Passo 5: Convergência da Série Geométrica
+
+A série geométrica $1 + r + r^2 + r^3 + \cdots$ converge porque $|r| < 1$, e sua soma é:
+
+$$\sum_{k=0}^{\infty} r^k = \frac{1}{1-r}$$
+
+Portanto:
+
+$$\sum_{n=1}^{\infty} c_n = (a_1 + a_2 + \cdots + a_{N-1}) + a_N \cdot \frac{1}{1-r} < \infty$$
+
+> **Conclusão Parcial:** A série $\sum c_n$ **converge**.
+
+---
+
+### Passo 6: Teste da Comparação
+
+Por construção, temos que:
+
+$$a_n \leq c_n \quad \text{para todo } n \geq 1$$
+
+Como:
+1. Todos os termos são positivos
+2. $\sum c_n$ converge
+3. $a_n \leq c_n$ para todo $n$
+
+Pelo **Teste da Comparação**, concluímos que:
+
+$$\boxed{\sum_{n=1}^{\infty} a_n \text{ converge}}$$
+
+---
+
+## 🎯 Intuição Geométrica
+
+A prova essencialmente mostra que:
+
+- Após um certo ponto ($n \geq N$), nossa série se comporta **melhor** que uma série geométrica com razão $r < 1$
+- Como a série geométrica converge, nossa série também deve convergir
+- A escolha de $r$ entre $\rho$ e $1$ garante que temos uma "margem de segurança" para a convergência
+
+---
+
+## 📊 Exemplo Visual
+
+Considere $\rho = 0.5$ e escolhemos $r = 0.7$:
+
+| Posição | Série Original | | Série Limitante (geométrica) |
+|:-------:|:--------------:|:---:|:---------------------------:|
+| $n = N$ | $a_N$ | $\leq$ | $a_N$ |
+| $n = N+1$ | $a_{N+1}$ | $\leq$ | $0.7 \cdot a_N$ |
+| $n = N+2$ | $a_{N+2}$ | $\leq$ | $0.49 \cdot a_N = (0.7)^2 a_N$ |
+| $n = N+3$ | $a_{N+3}$ | $\leq$ | $0.343 \cdot a_N = (0.7)^3 a_N$ |
+| $\vdots$ | $\vdots$ | $\vdots$ | $\vdots$ |
+| $n = N+m$ | $a_{N+m}$ | $\leq$ | $(0.7)^m \cdot a_N$ |
+
+**Conclusão:** Como $r = 0.7 < 1$, a série geométrica $\sum (0.7)^m a_N$ converge, forçando a convergência da série original $\sum a_n$! ✓
+
+---
+
+### Representação Gráfica
+
+$\boxed{a_N} \xrightarrow{\times \rho} \boxed{a_{N+1}} \xrightarrow{\times \rho} \boxed{a_{N+2}} \xrightarrow{\times \rho} \boxed{a_{N+3}} \xrightarrow{\times \rho} \cdots$
+
+$\Downarrow \leq \quad\quad\quad \Downarrow \leq \quad\quad\quad \Downarrow \leq \quad\quad\quad \Downarrow \leq$
+
+$\boxed{a_N} \xrightarrow{\times r} \boxed{ra_N} \xrightarrow{\times r} \boxed{r^2a_N} \xrightarrow{\times r} \boxed{r^3a_N} \xrightarrow{\times r} \cdots$
+
+A série de baixo (geométrica com $r < 1$) converge e domina a série de cima!
