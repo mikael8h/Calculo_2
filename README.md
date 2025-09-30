@@ -590,15 +590,11 @@ O objetivo dessa seção é responder à pergunta:
 
 Se uma série convergente $\sum a_n$ tem uma soma total **S**, e você calcula a **n-ésima soma parcial** $s_n$ (a soma dos primeiros n termos), o resto $R_n$ é a diferença entre a soma total e a soma parcial:
 
-$$
-R_n = S - s_n
-$$
+$$R_n = S - s_n$$
 
 O resto $R_n$ é, na verdade, a soma de todos os termos que você ignorou a partir do índice $n+1$:
 
-$$
-R_n = a_{n+1} + a_{n+2} + a_{n+3} + \cdots
-$$
+$$R_n = a_{n+1} + a_{n+2} + a_{n+3} + \cdots$$
 
 ---
 
@@ -611,22 +607,16 @@ Se a série é convergente e $a_k = f(k)$, podemos visualizar o resto $R_n$ (os 
 - **Limite Inferior (menor que $R_n$):**  
   A área sob a curva a partir de $x = n+1$ é menor que a soma $R_n$:
 
-  $$
-  R_n = a_{n+1} + a_{n+2} + \cdots \;\;\; \geq \;\;\; \int_{n+1}^{\infty} f(x)\,dx
-  $$
+  $$R_n = a_{n+1} + a_{n+2} + \cdots \geq \int_{n+1}^{\infty} f(x)\,dx$$
 
 - **Limite Superior (maior que $R_n$):**  
   A área sob a curva a partir de $x = n$ é maior que a soma $R_n$:
 
-  $$
-  R_n = a_{n+1} + a_{n+2} + \cdots \;\;\; \leq \;\;\; \int_{n}^{\infty} f(x)\,dx
-  $$
+  $$R_n = a_{n+1} + a_{n+2} + \cdots \leq \int_{n}^{\infty} f(x)\,dx$$
 
 📌 **Combinando esses resultados, obtemos a desigualdade principal para o resto:**
 
-$$
-\int_{n+1}^{\infty} f(x)\,dx \;\;\; \leq \;\;\; R_n \;\;\; \leq \;\;\; \int_{n}^{\infty} f(x)\,dx \tag{1}
-$$
+ **$\int_{n+1}^{\infty} f(x)\,dx \leq R_n \leq \int_{n}^{\infty} f(x)\,dx \tag{1}$**
 
 ---
 
@@ -637,9 +627,7 @@ No entanto, o mais prático é usá-la para estimar a **soma total $S$**.
 
 Como $S = s_n + R_n$, você pode adicionar a soma parcial $s_n$ a todos os três lados da desigualdade (1) para obter um intervalo que contém o valor exato da soma total $S$:
 
-$$
-s_n + \int_{n+1}^{\infty} f(x)\,dx \;\;\; \leq \;\;\; S \;\;\; \leq \;\;\; s_n + \int_{n}^{\infty} f(x)\,dx \tag{2}
-$$
+**$s_n + \int_{n+1}^{\infty} f(x)\,dx \leq S \leq s_n + \int_{n}^{\infty} f(x)\,dx \tag{2}$**
 
 ---
 
