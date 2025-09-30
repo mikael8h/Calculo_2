@@ -308,7 +308,7 @@ Portanto, o teste do termo n-ésimo **não prova convergência**, apenas diverg�
 
 # ∭ Teste da integral
 
-![alt text](image.png)
+![alt text](<Captura de tela 2025-09-29 212456.png>)
 
 
 ## ✅ Condições para Aplicar o Teste da Integral
@@ -518,14 +518,14 @@ $\lim_{t \to \infty} \big[F(t) - F(N)\big]$
 
 🎯 **Regra Final:**
 
-$
+$$
 \boxed{
-\begin{align}
+\begin{aligned}
 \text{Integral CONVERGE} &\;\;\Rightarrow\;\; \text{Série CONVERGE} \\[0.5em]
 \text{Integral DIVERGE} &\;\;\Rightarrow\;\; \text{Série DIVERGE}
-\end{align}
+\end{aligned}
 }
-$
+$$
 
 ---
 
@@ -533,7 +533,7 @@ $
 
 Use esta lista para verificar cada etapa:
 
-- [ ] **Passo 1:** Defini $f(x)$ corretamente?  
+- [x] **Passo 1:** Defini $f(x)$ corretamente?  
 - [ ] **Passo 2a:** $f$ é contínua para $x \geq N$?  
 - [ ] **Passo 2b:** $f(x) > 0$ para $x \geq N$?  
 - [ ] **Passo 2c:** $f'(x) < 0$ para $x \geq N$? (decrescente)  
@@ -573,6 +573,84 @@ Use esta lista para verificar cada etapa:
 
 4. **Generalização com Logaritmo:** Para $p > 1$:
    $$\sum_{n=2}^{\infty} \frac{1}{n (\ln n)^p} \text{ converge}$$
+
+---
+
+
+   ![alt text](image-1.png)
+
+   ## 📏 Estimativa de Erro (O Resto $R_n$)
+
+O objetivo dessa seção é responder à pergunta:  
+**Quão errado estou se paro de somar uma série convergente em um certo ponto?**
+
+---
+
+### 1. Definição do Resto ($R_n$)
+
+Se uma série convergente $\sum a_n$ tem uma soma total **S**, e você calcula a **n-ésima soma parcial** $s_n$ (a soma dos primeiros n termos), o resto $R_n$ é a diferença entre a soma total e a soma parcial:
+
+$$
+R_n = S - s_n
+$$
+
+O resto $R_n$ é, na verdade, a soma de todos os termos que você ignorou a partir do índice $n+1$:
+
+$$
+R_n = a_{n+1} + a_{n+2} + a_{n+3} + \cdots
+$$
+
+---
+
+### 2. A Intuição Geométrica (Limites para o Resto)
+
+A ideia central do **Teste da Integral** é comparar a soma dos termos da série (que são áreas de retângulos) com a área sob uma função contínua $f(x)$ que passa por esses pontos.
+
+Se a série é convergente e $a_k = f(k)$, podemos visualizar o resto $R_n$ (os termos de $a_{n+1}$ em diante) como estando entre duas integrais impróprias:
+
+- **Limite Inferior (menor que $R_n$):**  
+  A área sob a curva a partir de $x = n+1$ é menor que a soma $R_n$:
+
+  $$
+  R_n = a_{n+1} + a_{n+2} + \cdots \;\;\; \geq \;\;\; \int_{n+1}^{\infty} f(x)\,dx
+  $$
+
+- **Limite Superior (maior que $R_n$):**  
+  A área sob a curva a partir de $x = n$ é maior que a soma $R_n$:
+
+  $$
+  R_n = a_{n+1} + a_{n+2} + \cdots \;\;\; \leq \;\;\; \int_{n}^{\infty} f(x)\,dx
+  $$
+
+📌 **Combinando esses resultados, obtemos a desigualdade principal para o resto:**
+
+$$
+\int_{n+1}^{\infty} f(x)\,dx \;\;\; \leq \;\;\; R_n \;\;\; \leq \;\;\; \int_{n}^{\infty} f(x)\,dx \tag{1}
+$$
+
+---
+
+### 3. Estimativa da Soma Total (S)
+
+A desigualdade acima **(1)** é útil para entender o tamanho do erro.  
+No entanto, o mais prático é usá-la para estimar a **soma total $S$**.
+
+Como $S = s_n + R_n$, você pode adicionar a soma parcial $s_n$ a todos os três lados da desigualdade (1) para obter um intervalo que contém o valor exato da soma total $S$:
+
+$$
+s_n + \int_{n+1}^{\infty} f(x)\,dx \;\;\; \leq \;\;\; S \;\;\; \leq \;\;\; s_n + \int_{n}^{\infty} f(x)\,dx \tag{2}
+$$
+
+---
+
+### ✅ Conclusão Didática
+
+A desigualdade **(2)** é a sua ferramenta final:  
+Ela cria um **intervalo apertado** dentro do qual a soma verdadeira $S$ deve estar.
+
+O erro na sua aproximação $s_n$ **não pode ser maior** que a diferença entre o limite superior e inferior do intervalo (ou seja, o comprimento do intervalo).  
+
+🔎 Esse método fornece uma maneira robusta de **quantificar a precisão** da sua aproximação para séries que convergem pelo **Teste da Integral**.
 
 ---
 
