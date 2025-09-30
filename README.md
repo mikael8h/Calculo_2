@@ -780,11 +780,76 @@ graph TD
     H --> I["Convergência ∀ x ∈ ℝ"]
 ```
 
+ # 💡 Informações pertinentes:
 
+ - Regras basicas de lgarítmo:
 
+ -> $\ln\left(\frac{a}{b}\right) = \ln(a) - \ln(b)$
 
+ -> $\ln(a \cdot b) = \ln(a) + \ln(b)$
 
+ -> $\ln(a^n) = n\ln(a)$
 
-```python
+ ---
 
-```
+ - ## 📌 p-séries
+
+### Definição
+
+Uma **p-série** é uma série da forma:
+
+$\sum_{n=1}^{\infty} \frac{1}{n^p}$
+
+onde $p > 0$ é um número real.
+
+---
+
+### Critério de Convergência da p-série
+
+O comportamento depende apenas do valor de $p$:
+
+- Se $p > 1$, a série **converge**.  
+- Se $0 < p \leq 1$, a série **diverge**.  
+
+---
+
+### Exemplos
+
+- Para $p = 2$:  
+  $\sum_{n=1}^{\infty} \frac{1}{n^2} \quad \text{converge (resultado famoso: } = \frac{\pi^2}{6}\text{)}$
+
+- Para $p = 1$:  
+  $\sum_{n=1}^{\infty} \frac{1}{n} \quad \text{diverge (série harmônica)}$
+
+- Para $p = \tfrac{1}{2}$:  
+  $\sum_{n=1}^{\infty} \frac{1}{\sqrt{n}} \quad \text{diverge}$
+
+---
+
+### Importância no Cálculo 2
+
+1. **Exemplo clássico de séries infinitas** – ajudam a entender como valores aparentemente pequenos $\tfrac{1}{n^p}$ podem ou não gerar soma finita.  
+
+2. **Base para o Teste da Comparação** – muitas vezes, para verificar a convergência de uma série complicada, você compara com uma p-série.  
+
+   Exemplo:  
+   $\sum \frac{1}{n^2 + n} \sim \frac{1}{n^2}$  
+   → converge porque se comporta como a p-série com $p=2$.  
+
+3. **Conexão com integrais impróprias** – a demonstração do critério usa o **teste da integral**.  
+
+4. **Aplicações em física e engenharia** – aparecem em análise de energia, sinais, métodos numéricos e até em séries de Fourier.  
+
+---
+
+### Resumindo
+
+As **p-séries são um modelo de referência**.  
+Saber que 
+
+$\sum \frac{1}{n^p}$
+
+converge **somente se $p > 1$** é uma das ferramentas principais para estudar séries em Cálculo 2.
+ 
+
+ ---
