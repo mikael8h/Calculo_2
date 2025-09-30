@@ -616,7 +616,7 @@ Se a série é convergente e $a_k = f(k)$, podemos visualizar o resto $R_n$ (os 
 
 📌 **Combinando esses resultados, obtemos a desigualdade principal para o resto:**
 
- $$\int_{n+1}^{\infty} f(x)\,dx \leq R_n \leq \int_{n}^{\infty} f(x)\,dx \tag{1}$$
+- $$\int_{n+1}^{\infty} f(x)\,dx \leq R_n \leq \int_{n}^{\infty} f(x)\,dx\tag{1}$$
 
 ---
 
@@ -627,7 +627,7 @@ No entanto, o mais prático é usá-la para estimar a **soma total $S$**.
 
 Como $S = s_n + R_n$, você pode adicionar a soma parcial $s_n$ a todos os três lados da desigualdade (1) para obter um intervalo que contém o valor exato da soma total $S$:
 
-$$s_n + \int_{n+1}^{\infty} f(x)\,dx \leq S \leq s_n + \int_{n}^{\infty} f(x)\,dx \tag{2}$$
+- $$s_n + \int_{n+1}^{\infty} f(x)\,dx \leq S \leq s_n + \int_{n}^{\infty} f(x)\,dx\tag{2}$$
 
 ---
 
@@ -807,12 +807,12 @@ Este método funciona bem quando a desigualdade entre $a_n$ e $b_n$ é óbvia.
 
 #### Cenário 1: Provar Convergência
 Se você suspeita que $\sum a_n$ converge, mostre que:
-> $$ 0 \le a_n \le b_n $$
+> $$0 \le a_n \le b_n$$
 > E que $\sum b_n$ **converge**. Se conseguir, $\sum a_n$ também **converge**.
 
 #### Cenário 2: Provar Divergência
 Se você suspeita que $\sum a_n$ diverge, mostre que:
-> $$ 0 \le b_n \le a_n $$
+> $$0 \le b_n \le a_n$$
 > E que $\sum b_n$ **diverge**. Se conseguir, $\sum a_n$ também **diverge**.
 
 ⚠️ **Atenção:** Se a desigualdade for na direção "errada" (ex: $a_n$ é maior que o termo de uma série convergente), este teste é **inconclusivo**. Vá para o Método B.
@@ -824,9 +824,7 @@ Se você suspeita que $\sum a_n$ diverge, mostre que:
 Este é o método mais poderoso e frequentemente mais fácil de aplicar.
 
 Calcule o seguinte limite:
-$$
-L = \lim_{n \to \infty} \frac{a_n}{b_n}
-$$
+$$L = \lim_{n \to \infty} \frac{a_n}{b_n}$$
 Agora, interprete o valor de $L$:
 
 *   **Caso 1: `L` é um número finito e positivo ($0 < L < \infty$)**
@@ -838,7 +836,7 @@ Agora, interprete o valor de $L$:
     *   **Conclusão:** $a_n$ é significativamente menor que $b_n$.
     *   Se a série "maior", $\sum b_n$, **converge**, então a sua série $\sum a_n$ também **converge**.
 
-*   **Caso 3: `L = \infty`**
+*   **Caso 3:$`(L = \infty)`$**
     *   **Conclusão:** $a_n$ é significativamente maior que $b_n$.
     *   Se a série "menor", $\sum b_n$, **diverge**, então a sua série $\sum a_n$ também **diverge**.
 
@@ -1275,9 +1273,9 @@ $\sum \frac{1}{n^p}$
 
 converge **somente se $p > 1$** é uma das ferramentas principais para estudar séries em Cálculo 2.
  
- ---
 
- # Prova do Teste da Razão
+ ---
+# Prova do Teste da Razão
 
 ## 📋 Enunciado do Teorema
 
