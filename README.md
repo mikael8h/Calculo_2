@@ -305,6 +305,279 @@ Portanto, o teste do termo n-ésimo **não prova convergência**, apenas diverg�
 
 ---
 
+
+# ∭ Teste da integral
+
+![alt text](image.png)
+
+
+## ✅ Condições para Aplicar o Teste da Integral
+
+Para usar o Teste da Integral na série $\sum_{n=N}^{\infty} a_n$, precisamos verificar **TODAS** estas condições:
+
+> **1. 🔗 Função associada**  
+> Existe uma função $f(x)$ tal que $a_n = f(n)$
+
+> **2. 📈 Contínua**  
+> A função $f(x)$ deve ser contínua para $x \geq N$
+
+> **3. ➕ Positiva**  
+> A função $f(x)$ deve ser positiva para $x \geq N$, isto é, $f(x) > 0$
+
+> **4. 📉 Decrescente**  
+> A função $f(x)$ deve ser decrescente para $x \geq N$, ou seja, $f'(x) < 0$
+
+---
+
+## 📚 Explicação Didática da Teoria
+
+### 💡 O que diz o teorema?
+
+O Teste da Integral estabelece uma **conexão fundamental** entre séries e integrais impróprias:
+
+$$\boxed{\sum_{n=N}^{\infty} a_n \quad \text{e} \quad \int_N^{\infty} f(x) \, dx}$$
+
+**têm o mesmo comportamento de convergência!** 🎯
+
+---
+
+### 🤔 Por que isso funciona?
+
+Imagine que você está somando retângulos sob a curva $y = f(x)$:
+
+📊 Visualização Geométrica
+
+```markdown
+
+ Visualização Geométrica
+    
+f(x) |    ▓▓
+     |   ▓▓▓▓
+     |  ▓▓▓▓▓▓
+     | ▓▓▓▓▓▓▓▓
+     |▓▓▓▓▓▓▓▓▓▓
+     +──────────────> x
+      1  2  3  4  5
+
+```    
+
+---
+
+- 📦 Cada termo $a_n = f(n)$ representa a **altura** de um retângulo de largura 1
+- 🧮 A soma $\sum a_n$ **aproxima** a área sob a curva
+- 📐 A integral $\int f(x) \, dx$ **calcula exatamente** essa área
+
+**Intuição chave:** Como $f$ é decrescente e positiva, se a área sob a curva (integral) é finita, então a soma dos retângulos (série) também é finita, e vice-versa! 🔄
+
+---
+
+### ⚖️ Conclusão do Teste
+
+| Integral | ⟹ | Série |
+|----------|---|-------|
+| ✅ **Converge** | ⟹ | ✅ **Converge** |
+| ❌ **Diverge** | ⟹ | ❌ **Diverge** |
+
+$$\text{Se } \int_N^{\infty} f(x) \, dx \text{ converge} \quad \Rightarrow \quad \sum_{n=N}^{\infty} a_n \text{ converge}$$
+
+$$\text{Se } \int_N^{\infty} f(x) \, dx \text{ diverge} \quad \Rightarrow \quad \sum_{n=N}^{\infty} a_n \text{ diverge}$$
+
+---
+
+### ⚠️ Observação Importante
+
+> 🔴 **ATENÇÃO:** O teste **NÃO nos dá o valor** da soma da série!  
+> Ele apenas indica se a série **converge** ou **diverge**.
+
+---
+
+## 🔍 Algoritmo: Quando e Como Usar o Teste da Integral
+
+### 📋 PASSO 1: Identificar quando usar
+
+#### ✅ **USE o Teste da Integral quando:**
+
+- ✔️ A série tem a forma $\sum \frac{1}{n^p}$ ou $\sum \frac{1}{n \ln n}$ ou funções similares
+
+- ✔️ Os termos são dados por uma **fração racional** ou **função com logaritmos**
+
+- ✔️ A função parece ser **contínua**, **positiva** e **decrescente**
+
+#### ❌ **NÃO USE o Teste da Integral quando:**
+
+- ❗ A série tem **termos alternados** (como $(-1)^n$)  
+  👉 *Use o Teste das Séries Alternadas*
+
+- ❗ A função **não é decrescente** (oscila ou cresce)  
+  👉 *Escolha outro teste*
+
+- ❗ Há **fatoriais** $(n!)$ ou **exponenciais** $(a^n)$  
+  👉 *Use o Teste da Razão ou da Raiz*
+
+---
+
+### 🎬 Resumo Visual
+
+
+```markdown
+┌─────────────────────────────────────────┐
+│  TESTE DA INTEGRAL - FLUXOGRAMA         │
+├─────────────────────────────────────────┤
+│                                         │
+│  Série: Σ aₙ                            │
+│          ↓                              │
+│  f(x) tal que aₙ = f(n)?                │
+│     ↓ SIM                               │
+│  f contínua, positiva, decrescente?     │
+│     ↓ SIM                               │
+│  Calcule: ∫[N,∞] f(x)dx                 │
+│          ↓                              │
+│     ┌────┴────┐                         │
+│  Converge  Diverge                      │
+│     ↓         ↓                         │
+│  Σ aₙ     Σ aₙ                           │
+│ CONVERGE  DIVERGE                       │
+└─────────────────────────────────────────┘
+
+
+
+```
+
+
+
+## 📋 Algoritmo do Teste da Integral - Versão em Tópicos
+
+---
+
+## 🔷 *Passo* 1: Definir a função f(x)
+
+Substitua **n** por **x** no termo geral \(a_n\)  
+
+Exemplo:  
+
+$a_n = \frac{1}{n^2} \;\;\;\; \rightarrow \;\;\;\; f(x) = \frac{1}{x^2}$  
+
+$a_n = \frac{n}{2} \;\;\;\; \rightarrow \;\;\;\; f(x) = \frac{x}{2}$
+
+---
+
+## 🔷 *Passo* 2: Verificar as 3 Condições
+
+### ✅ Condição 1: Continuidade
+Verifique se $f(x)$ é **contínua** para $x \geq N$.
+
+💡 Dica: Geralmente é contínua, exceto onde há:
+- Divisão por zero
+- Logaritmo de número negativo ou zero
+- Raiz de número negativo
+
+---
+
+### ✅ Condição 2: Positividade
+Verifique se $f(x) > 0$ para $x \geq N$.
+
+💡 *Dica:* Teste com valores grandes de $x$.  
+Observe o sinal da função.
+
+---
+
+### ✅ Condição 3: Decrescimento
+Calcule a derivada $f'(x)$.  
+Verifique se $f'(x) < 0$ para $x \geq N$.  
+
+✅ Se $f'(x) < 0$ → função é decrescente.  
+
+⚠️ Se alguma condição falhar: **Não use o Teste da Integral!** Escolha outro teste.
+
+---
+
+## 🔷 *Passo* 3: Calcular a Integral Imprópria
+
+### 3.1 Configurar o limite
+
+$\int_N^{\infty} f(x)\,dx = \lim_{t \to \infty} \int_N^{t} f(x)\,dx$
+
+### 3.2 Calcular a integral definida
+- Encontre a **primitiva** de $f(x)$.  
+- Calcule $\int_N^t f(x)\,dx$ usando o **Teorema Fundamental do Cálculo**.  
+
+Resultado: $F(t) - F(N)$, onde $F$ é a primitiva.
+
+### 3.3 Aplicar o limite
+
+$\lim_{t \to \infty} \big[F(t) - F(N)\big]$
+
+### 3.4 Analisar o resultado
+- 🟢 Número finito → ✅ Integral **CONVERGE**  
+- 🔴 Infinito ($\infty$) → ❌ Integral **DIVERGE**  
+- 🔴 Não existe → ❌ Integral **DIVERGE**
+
+---
+
+## 🔷 *Passo* 4: Concluir sobre a Série
+
+🎯 **Regra Final:**
+
+$
+\boxed{
+\begin{align}
+\text{Integral CONVERGE} &\;\;\Rightarrow\;\; \text{Série CONVERGE} \\[0.5em]
+\text{Integral DIVERGE} &\;\;\Rightarrow\;\; \text{Série DIVERGE}
+\end{align}
+}
+$
+
+---
+
+## 📝 Checklist Rápido
+
+Use esta lista para verificar cada etapa:
+
+- [ ] **Passo 1:** Defini $f(x)$ corretamente?  
+- [ ] **Passo 2a:** $f$ é contínua para $x \geq N$?  
+- [ ] **Passo 2b:** $f(x) > 0$ para $x \geq N$?  
+- [ ] **Passo 2c:** $f'(x) < 0$ para $x \geq N$? (decrescente)  
+- [ ] **Passo 3a:** Configurei a integral imprópria com limite?  
+- [ ] **Passo 3b:** Calculei a integral definida?  
+- [ ] **Passo 3c:** Apliquei o limite quando $t \to \infty$?  
+- [ ] **Passo 3d:** Analisei se o resultado é finito ou infinito?  
+- [ ] **Passo 4:** Concluí sobre a convergência da série?
+
+
+---
+
+## 📊 Casos Clássicos
+
+| Série | Teste da Integral | Resultado |
+|:------|:-----------------|:----------|
+| $\sum_{n=1}^{\infty} \frac{1}{n^p}$ com $p > 1$ | $\int_1^{\infty} \frac{1}{x^p} \, dx$ | ✅ **Converge** |
+| $\sum_{n=1}^{\infty} \frac{1}{n^p}$ com $p \leq 1$ | $\int_1^{\infty} \frac{1}{x^p} \, dx$ | ❌ **Diverge** |
+| $\sum_{n=1}^{\infty} \frac{1}{n}$ (série harmônica) | $\int_1^{\infty} \frac{1}{x} \, dx$ | ❌ **Diverge** |
+| $\sum_{n=2}^{\infty} \frac{1}{n \ln n}$ | $\int_2^{\infty} \frac{1}{x \ln x} \, dx$ | ❌ **Diverge** |
+| $\sum_{n=2}^{\infty} \frac{1}{n (\ln n)^p}$ com $p > 1$ | $\int_2^{\infty} \frac{1}{x (\ln x)^p} \, dx$ | ✅ **Converge** |
+| $\sum_{n=1}^{\infty} \frac{1}{n^2}$ (Basileia) | $\int_1^{\infty} \frac{1}{x^2} \, dx$ | ✅ **Converge** = 1 |
+
+---
+
+### 💡 Observações Importantes
+
+1. **Série p:** A série $\sum \frac{1}{n^p}$ é chamada de **série p** ou **série hiperarmônica**
+   - Converge se e somente se $p > 1$
+
+2. **Série Harmônica:** $\sum_{n=1}^{\infty} \frac{1}{n}$ é o caso limite quando $p = 1$
+   - É **divergente** apesar dos termos tenderem a zero!
+
+3. **Série de Basileia:** $\sum_{n=1}^{\infty} \frac{1}{n^2} = \frac{\pi^2}{6} \approx 1.645$
+   - Converge, mas o teste da integral dá apenas $\int_1^{\infty} \frac{1}{x^2} dx = 1$
+   - O valor exato da série é diferente do valor da integral!
+
+4. **Generalização com Logaritmo:** Para $p > 1$:
+   $$\sum_{n=2}^{\infty} \frac{1}{n (\ln n)^p} \text{ converge}$$
+
+---
+
+
+
 # 📌 Teste da Série Alternada  
 
 Considere uma série da forma:
