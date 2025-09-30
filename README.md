@@ -455,9 +455,9 @@ Substitua **n** por **x** no termo geral \(a_n\)
 
 Exemplo:  
 
-$a_n = \frac{1}{n^2} \;\;\;\; \rightarrow \;\;\;\; f(x) = \frac{1}{x^2}$  
+$a_n = \frac{1}{n^2} \rightarrow f(x) = \frac{1}{x^2}$  
 
-$a_n = \frac{n}{2} \;\;\;\; \rightarrow \;\;\;\; f(x) = \frac{x}{2}$
+$a_n = \frac{n}{2} \rightarrow f(x) = \frac{x}{2}$
 
 ---
 
