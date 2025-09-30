@@ -369,7 +369,7 @@ $\sum_{n=0}^{\infty} C_n (x - a)^n = C_0 + C_1(x-a) + C_2(x-a)^2 + \cdots$
 
 onde:
 - a é o **centro** da série  
-- C₀, C₁, C₂,… são **constantes (coeficientes)**  
+- $C_0, C_1, C_2, \ldots$ são **constantes (coeficientes)**  
 - x é a variável real
 
 ---
@@ -414,7 +414,8 @@ $\lim_{n \to \infty} \left| \frac{2}{n+1} \right| = 0 < 1$
 
 ### 🔹 Caso Geral: x ≠ 0
 
-Aₙ = xⁿ / n!  
+ $A_n = \frac{x^n}{n!}$  
+
 Teste da Razão: $\lim_{n \to \infty} \left| \frac{A_{n+1}}{A_n} \right| = \lim_{n \to \infty} \frac{|x|}{n+1} = 0 < 1$
 
 ✅ Converge $x \in \mathbb{R}$
@@ -440,10 +441,10 @@ graph TD
 
  - Regras basicas de lgarítmo:
 
- -> $ln(a/b) = ln(a) - ln(b)$
+ -> $\ln\left(\frac{a}{b}\right) = \ln(a) - \ln(b)$
 
- -> $ln(a.b) = ln(a) + ln(b)$
+ -> $\ln(a \cdot b) = \ln(a) + \ln(b)$
 
- -> $ln(a^n) = nln(a)$
+ -> $\ln(a^n) = n\ln(a)$
 
  ---
