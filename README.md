@@ -533,7 +533,7 @@ $$
 
 Use esta lista para verificar cada etapa:
 
-- [x] **Passo 1:** Defini $f(x)$ corretamente?  
+- [ ] **Passo 1:** Defini $f(x)$ corretamente?  
 - [ ] **Passo 2a:** $f$ é contínua para $x \geq N$?  
 - [ ] **Passo 2b:** $f(x) > 0$ para $x \geq N$?  
 - [ ] **Passo 2c:** $f'(x) < 0$ para $x \geq N$? (decrescente)  
@@ -616,7 +616,7 @@ Se a série é convergente e $a_k = f(k)$, podemos visualizar o resto $R_n$ (os 
 
 📌 **Combinando esses resultados, obtemos a desigualdade principal para o resto:**
 
- **$\int_{n+1}^{\infty} f(x)\,dx \leq R_n \leq \int_{n}^{\infty} f(x)\,dx \tag{1}$**
+ $$\int_{n+1}^{\infty} f(x)\,dx \leq R_n \leq \int_{n}^{\infty} f(x)\,dx \tag{1}$$
 
 ---
 
@@ -627,7 +627,7 @@ No entanto, o mais prático é usá-la para estimar a **soma total $S$**.
 
 Como $S = s_n + R_n$, você pode adicionar a soma parcial $s_n$ a todos os três lados da desigualdade (1) para obter um intervalo que contém o valor exato da soma total $S$:
 
-**$s_n + \int_{n+1}^{\infty} f(x)\,dx \leq S \leq s_n + \int_{n}^{\infty} f(x)\,dx \tag{2}$**
+$$s_n + \int_{n+1}^{\infty} f(x)\,dx \leq S \leq s_n + \int_{n}^{\infty} f(x)\,dx \tag{2}$$
 
 ---
 
@@ -640,8 +640,242 @@ O erro na sua aproximação $s_n$ **não pode ser maior** que a diferença entre
 
 🔎 Esse método fornece uma maneira robusta de **quantificar a precisão** da sua aproximação para séries que convergem pelo **Teste da Integral**.
 
+```mermaid
+graph TB
+    A[Série: Σ aₙ] --> B[Definir f x]
+    B --> C{f contínua?}
+    C -->|Não| Z[Escolha outro teste]
+    C -->|Sim| D{f x maior 0?}
+    D -->|Não| Z
+    D -->|Sim| E{f decrescente?}
+    E -->|Não| Z
+    E -->|Sim| F[Calcular integral]
+    F --> G[Aplicar limite]
+    G --> H{Limite finito?}
+    H -->|Sim| I[CONVERGE]
+    H -->|Não| J[DIVERGE]
+    
+    style A fill:#bbdefb
+    style B fill:#fff9c4
+    style Z fill:#ffcdd2
+    style I fill:#c8e6c9
+    style J fill:#ffccbc
+```
+
 ---
 
+# 🔀 Teste da Comparação
+![alt text](<Captura de tela 2025-09-30 010835.png>)
+
+## ⚖️ Teorema 10: O Teste da Comparação
+
+O **Teste da Comparação** se aplica a séries cujos termos não são negativos.  
+Ele usa o fato de que a convergência ou divergência de uma série desconhecida ($\sum a_n$) pode ser determinada **comparando-a** com uma série conhecida ($\sum c_n$ ou $\sum d_n$).
+
+---
+
+## 📌 Condição Fundamental
+
+Para que o teste funcione, você deve estabelecer uma **desigualdade** para os termos das séries a partir de algum índice $N$.
+
+Isto é, para algum inteiro $N$, temos:
+
+$$
+d_n \;\leq\; a_n \;\leq\; c_n 
+\quad \text{para todo } n > N
+$$
+
+---
+
+✅ A ideia é que, se $a_n$ está “preso” entre uma série que converge e outra que diverge, conseguimos concluir o comportamento da série $\sum a_n$.
+
+# Teorema do Teste da Comparação
+
+O **Teste da Comparação** é utilizado para determinar a convergência ou divergência de séries com termos não negativos ($\sum a_n$) ao compará-la com séries cuja convergência já é conhecida ($\sum c_n$ ou $\sum d_n$).
+
+A condição fundamental é estabelecer a seguinte relação, válida para todo $n$ maior que algum inteiro $N$:
+
+$$d_n \le a_n \le c_n \quad \text{para todo } n > N$$
+
+---
+
+### (a) A Parte da Convergência: O Princípio do Teto
+
+Este caso é usado quando se deseja provar que $\sum a_n$ converge.
+
+| Série de Referência | Sua Série | Intuição (Comparação) | Conclusão |
+| :--- | :--- | :--- | :--- |
+| **$\sum c_n$ (O Teto) Converge** | $\sum a_n$ | Se a sua série ($\sum a_n$) é menor que uma série que já tem soma finita ($\sum c_n$), a sua série também deve ter soma finita. | **$\sum a_n$ converge.** |
+
+#### Prova Didática
+
+1.  **Estabelecer a Relação:** A condição necessária é $a_n \le c_n$ para todo $n \ge N$.
+
+2.  **Limite Superior:** O valor da soma total da série $\sum a_n$ é limitado superiormente pela soma dos primeiros termos não comparáveis ($a_1$ até $a_N$) mais o resto da soma de $c_n$:
+
+    $$M = a_1 + a_2 + \cdots + a_N + \sum_{n=N+1}^{\infty} c_n$$
+
+3.  **Conclusão:** Como os termos da série são positivos (a sequência de somas parciais é crescente) e limitados superiormente por $M$, a série $\sum a_n$ converge para um limite $L \le M$.
+
+---
+
+### (b) A Parte da Divergência: O Princípio do Piso
+
+Este caso é usado quando se deseja provar que $\sum a_n$ diverge.
+
+| Série de Referência | Sua Série | Intuição (Comparação) | Conclusão |
+| :--- | :--- | :--- | :--- |
+| **$\sum d_n$ (O Piso) Diverge** | $\sum a_n$ | Se a sua série ($\sum a_n$) é maior que uma série que já diverge ($\sum d_n$), a sua série também deve crescer indefinidamente. | **$\sum a_n$ diverge.** |
+
+#### Prova Didática
+
+1.  **Estabelecer a Relação:** A condição necessária é $d_n \le a_n$ para todo $n \ge N$.
+
+2.  **Divergência do Piso:** Se $\sum d_n$ diverge, suas somas parciais tendem ao infinito: $\sum_{n=1}^{k} d_n \to \infty$.
+
+3.  **Conclusão:** Como $\sum_{n=1}^{k} a_n \ge \sum_{n=1}^{k} d_n$, e a soma da série menor ($\sum d_n$) cresce sem limite, a soma da série maior ($\sum a_n$) também deve crescer sem limite. Assim, **$\sum a_n$ diverge**.
+
+---
+
+### 🌟 Exemplo Rápido de Aplicação
+
+**Para provar divergência (Caso b):**
+
+Considere a série:
+
+$$\sum a_n = \sum \left( \frac{1}{n} + 5 \right)$$
+
+Compare-a com a série harmônica (que sabemos que diverge):
+
+$$\sum d_n = \sum \frac{1}{n}$$
+
+Como $\frac{1}{n} + 5 > \frac{1}{n}$ para todo $n$, e $\sum \frac{1}{n}$ diverge, então a série $\sum a_n$ também **diverge**.
+
+---
+
+Claro! Aqui está o mesmo algoritmo, mas reestruturado de uma forma mais visual e didática, usando os recursos do Markdown para facilitar a compreensão e a leitura.
+
+---
+
+## 🧠 Guia Visual: O Teste da Comparação para Séries
+
+Este guia explica como e quando usar o Teste da Comparação para determinar se uma série infinita converge ou diverge.
+
+> **A Ideia Central:** Comparar uma série complicada com uma série mais simples (e já conhecida) para descobrir seu comportamento.
+
+---
+
+### 🚦 Quando Usar este Teste?
+
+Use o Teste da Comparação quando sua série $\sum a_n$ se parece com uma "série famosa". Verifique duas condições:
+
+1.  **Aparência Familiar:** O termo $a_n$ se assemelha a:
+    *   Uma **Série-p**: $\sum \frac{1}{n^p}$ (Converge se $p > 1$, Diverge se $p \leq 1$)
+    *   Uma **Série Geométrica**: $\sum ar^n$ (Converge se $|r| < 1$, Diverge se $|r| \geq 1$)
+
+2.  **Termos Positivos:** A série $\sum a_n$ **deve ter apenas termos positivos** ($a_n > 0$).
+
+---
+
+## 🛠️ O Algoritmo: Passo a Passo
+
+Siga estes passos para aplicar o teste.
+
+### **Passo 1: Encontre uma Série para Comparar**
+
+Primeiro, analise sua série $\sum a_n$ e escolha uma série $\sum b_n$ para ser sua base de comparação.
+
+*   **Como escolher $\sum b_n$?**
+    *   Olhe para os termos de maior grau no numerador e no denominador de $a_n$.
+    *   Simplifique essa fração para criar seu $b_n$.
+
+    *   **Exemplo:** Se $a_n = \frac{3n^2 + 5}{n^4 + 2n}$, os termos dominantes são $\frac{3n^2}{n^4}$.
+    *   Simplificando, temos $\frac{3}{n^2}$. Uma ótima escolha para $b_n$ seria $\frac{1}{n^2}$.
+    *   Sabemos que $\sum \frac{1}{n^2}$ é uma **série-p convergente** ($p=2 > 1$).
+
+Agora que você tem sua série de comparação, escolha um dos dois métodos abaixo.
+
+---
+
+### **Passo 2 (Método A): Teste da Comparação Direta**
+
+Este método funciona bem quando a desigualdade entre $a_n$ e $b_n$ é óbvia.
+
+> **Regra de Ouro:**
+> *   Uma série **menor** que uma série **convergente**, também **converge**.
+> *   Uma série **maior** que uma série **divergente**, também **diverge**.
+
+#### Cenário 1: Provar Convergência
+Se você suspeita que $\sum a_n$ converge, mostre que:
+> $$ 0 \le a_n \le b_n $$
+> E que $\sum b_n$ **converge**. Se conseguir, $\sum a_n$ também **converge**.
+
+#### Cenário 2: Provar Divergência
+Se você suspeita que $\sum a_n$ diverge, mostre que:
+> $$ 0 \le b_n \le a_n $$
+> E que $\sum b_n$ **diverge**. Se conseguir, $\sum a_n$ também **diverge**.
+
+⚠️ **Atenção:** Se a desigualdade for na direção "errada" (ex: $a_n$ é maior que o termo de uma série convergente), este teste é **inconclusivo**. Vá para o Método B.
+
+---
+
+### **Passo 3 (Método B): Teste da Comparação no Limite**
+
+Este é o método mais poderoso e frequentemente mais fácil de aplicar.
+
+Calcule o seguinte limite:
+$$
+L = \lim_{n \to \infty} \frac{a_n}{b_n}
+$$
+Agora, interprete o valor de $L$:
+
+*   **Caso 1: `L` é um número finito e positivo ($0 < L < \infty$)**
+    *   **Conclusão:** "As séries são parceiras". Elas têm o **mesmo comportamento**.
+    *   Se $\sum b_n$ converge, então $\sum a_n$ converge.
+    *   Se $\sum b_n$ diverge, então $\sum a_n$ diverge.
+
+*   **Caso 2: `L = 0`**
+    *   **Conclusão:** $a_n$ é significativamente menor que $b_n$.
+    *   Se a série "maior", $\sum b_n$, **converge**, então a sua série $\sum a_n$ também **converge**.
+
+*   **Caso 3: `L = \infty`**
+    *   **Conclusão:** $a_n$ é significativamente maior que $b_n$.
+    *   Se a série "menor", $\sum b_n$, **diverge**, então a sua série $\sum a_n$ também **diverge**.
+
+---
+
+### 📋 Resumo Rápido
+
+1.  **Verifique:** A série $\sum a_n$ tem termos positivos?
+2.  **Escolha:** Encontre uma série $\sum b_n$ parecida e de comportamento conhecido.
+3.  **Tente a Comparação Direta:** A desigualdade é óbvia e leva a uma conclusão?
+    *   Sim? Problema resolvido.
+    *   Não? Vá para o próximo passo.
+4.  **Use a Comparação no Limite:** Calcule $L = \lim_{n \to \infty} \frac{a_n}{b_n}$ e use o resultado para determinar o comportamento de $\sum a_n$ com base em $\sum b_n$.
+
+```mermaid
+
+graph TD
+    A[Início: Analisar a série ∑aₙ] --> B{Termos de aₙ são positivos?};
+    B -- Não --> G[Teste da Comparação não aplicável];
+    B -- Sim --> C[Escolha uma série conhecida ∑bₙ para comparar];
+    C --> D{Tentativa de Comparação Direta};
+    D -- "aₙ ≤ bₙ e ∑bₙ converge" --> E[∑aₙ Converge];
+    D -- "aₙ ≥ bₙ e ∑bₙ diverge" --> F[∑aₙ Diverge];
+    D -- Inconclusivo --> H[Aplicar Teste da Comparação no Limite];
+    H --> I["Calcular L = lim(n→∞) aₙ / bₙ"];
+    I --> J{Qual o valor de L?};
+    J -- "0 < L < ∞" --> K{∑bₙ converge?};
+    K -- Sim --> E;
+    K -- Não --> F;
+    J -- "L = 0" --> L_zero{∑bₙ converge?};
+    L_zero -- Sim --> E;
+    L_zero -- Não --> M[Teste Inconclusivo];
+    J -- "L = ∞" --> L_inf{∑bₙ diverge?};
+    L_inf -- Sim --> F;
+    L_inf -- Não --> M;
+
+```
 
 
 # 📌 Teste da Série Alternada  
