@@ -1066,6 +1066,273 @@ Determine se as séries convergem:
 
 O Teste da Razão é uma ferramenta essencial no estudo de séries infinitas. Sua principal vantagem é a simplicidade de aplicação em séries com fatoriais e exponenciais. Lembre-se: quando o teste resulta em $L = 1$, você precisará usar outros métodos para determinar a convergência!
 
+# Teste da Raiz √
+
+## 🌱 O que é o Teste da Raiz?
+
+O **Teste da Raiz** (ou Teste de Cauchy) é uma ferramenta para determinar se uma série infinita converge ou diverge. Ele é especialmente poderoso para séries onde **$n$ aparece como expoente**.
+
+---
+
+## 🎯 Enunciado do Teste
+
+Dada uma série $\displaystyle \sum_{n=1}^{\infty} a_n$ com $a_n \geq 0$ para $n \geq N$, calculamos:
+
+$$\rho = \lim_{n \to \infty} \sqrt[n]{a_n}$$
+
+Então:
+
+| Valor de $\rho$ | Conclusão |
+|:---------------:|:---------:|
+| $\rho < 1$ | A série **CONVERGE** ✓ |
+| $\rho > 1$ ou $\rho = \infty$ | A série **DIVERGE** ✗ |
+| $\rho = 1$ | O teste é **INCONCLUSIVO** ❓ |
+
+---
+
+## 🧠 Intuição: Por que funciona?
+
+### A Ideia Central
+
+Quando calculamos $\sqrt[n]{a_n}$, estamos "extraindo" o comportamento exponencial do termo $a_n$.
+
+**Pense assim:**
+- Se $\sqrt[n]{a_n} \to \rho < 1$, então eventualmente $a_n < (\rho + \varepsilon)^n$ com $\rho + \varepsilon < 1$
+- Isso significa que nossa série é dominada por uma **série geométrica** com razão $< 1$
+- E séries geométricas com razão menor que 1 convergem!
+
+### Visualização do Comportamento
+
+$$\boxed{a_n} \xrightarrow{\text{extrair raiz n-ésima}} \boxed{\sqrt[n]{a_n}} \xrightarrow{\text{limite}} \boxed{\rho}$$
+
+**Interpretação:**
+
+| Se $\rho < 1$ | $\implies$ | $a_n < r^n$ (série geométrica convergente) | $\implies$ | **CONVERGE** ✓ |
+|:-------------:|:----------:|:-------------------------------------------:|:----------:|:--------------:|
+| Se $\rho > 1$ | $\implies$ | $a_n > 1$ (termos não vão a zero) | $\implies$ | **DIVERGE** ✗ |
+| Se $\rho = 1$ | $\implies$ | Comportamento indefinido | $\implies$ | **INCONCLUSIVO** ❓ |
+
+---
+
+## 🔍 Algoritmo Passo a Passo
+
+```
+┌─────────────────────────────────────────────────────────────┐
+│                    ALGORITMO TESTE DA RAIZ                  │
+└─────────────────────────────────────────────────────────────┘
+
+ENTRADA: Série Σaₙ com aₙ ≥ 0
+
+PASSO 1: Identifique o termo geral aₙ
+         │
+         v
+PASSO 2: Calcule a raiz n-ésima: ⁿ√aₙ
+         │
+         │ Use propriedades:
+         │ • ⁿ√(a·b) = ⁿ√a · ⁿ√b
+         │ • ⁿ√(a/b) = ⁿ√a / ⁿ√b
+         │ • ⁿ√(aᵏ) = a^(k/n)
+         v
+PASSO 3: Calcule ρ = lim(n→∞) ⁿ√aₙ
+         │
+         │ Limites úteis:
+         │ • lim ⁿ√n = 1
+         │ • lim ⁿ√(nᵏ) = 1
+         │ • lim aⁿ⁄ⁿ = 1 (a > 0)
+         v
+PASSO 4: Compare ρ com 1
+         │
+         ├─── ρ < 1 ──→ CONVERGE ✓
+         │
+         ├─── ρ > 1 ──→ DIVERGE ✗
+         │
+         └─── ρ = 1 ──→ INCONCLUSIVO ❓
+                        (use outro teste)
+
+SAÍDA: Convergência ou Divergência da série
+```
+
+---
+
+## 💡 Exemplo 1: Série com Potências de n
+
+**Determine se a série converge:** $\displaystyle \sum_{n=1}^{\infty} \left(\frac{2n+1}{3n-2}\right)^n$
+
+### Solução Completa:
+
+**Passo 1:** Identificar $a_n$
+$$a_n = \left(\frac{2n+1}{3n-2}\right)^n$$
+
+**Passo 2:** Calcular a raiz n-ésima
+$$\sqrt[n]{a_n} = \sqrt[n]{\left(\frac{2n+1}{3n-2}\right)^n} = \frac{2n+1}{3n-2}$$
+
+**Passo 3:** Calcular o limite
+$$\rho = \lim_{n \to \infty} \frac{2n+1}{3n-2} = \lim_{n \to \infty} \frac{n(2 + \frac{1}{n})}{n(3 - \frac{2}{n})} = \frac{2}{3}$$
+
+**Passo 4:** Conclusão
+$$\rho = \frac{2}{3} < 1 \implies \text{Série } \boxed{\text{CONVERGE}} \, ✓$$
+
+---
+
+## 💡 Exemplo 2: Série com Exponenciais e Potências
+
+**Determine se a série converge:** $\displaystyle \sum_{n=1}^{\infty} \frac{5^n}{n^n}$
+
+### Solução Completa:
+
+**Passo 1:** Identificar $a_n$
+$$a_n = \frac{5^n}{n^n}$$
+
+**Passo 2:** Calcular a raiz n-ésima
+$$\sqrt[n]{a_n} = \sqrt[n]{\frac{5^n}{n^n}} = \frac{\sqrt[n]{5^n}}{\sqrt[n]{n^n}} = \frac{5}{n}$$
+
+**Passo 3:** Calcular o limite
+$$\rho = \lim_{n \to \infty} \frac{5}{n} = 0$$
+
+**Passo 4:** Conclusão
+$$\rho = 0 < 1 \implies \text{Série } \boxed{\text{CONVERGE}} \, ✓$$
+
+---
+
+## 💡 Exemplo 3: Série Divergente
+
+**Determine se a série converge:** $\displaystyle \sum_{n=1}^{\infty} \left(\frac{n+3}{n}\right)^{n^2}$
+
+### Solução Completa:
+
+**Passo 1:** Identificar $a_n$
+$$a_n = \left(\frac{n+3}{n}\right)^{n^2}$$
+
+**Passo 2:** Calcular a raiz n-ésima
+$$\sqrt[n]{a_n} = \sqrt[n]{\left(\frac{n+3}{n}\right)^{n^2}} = \left(\frac{n+3}{n}\right)^{n^2/n} = \left(\frac{n+3}{n}\right)^n = \left(1 + \frac{3}{n}\right)^n$$
+
+**Passo 3:** Calcular o limite
+$$\rho = \lim_{n \to \infty} \left(1 + \frac{3}{n}\right)^n = e^3 \approx 20.09$$
+
+**Passo 4:** Conclusão
+$$\rho = e^3 > 1 \implies \text{Série } \boxed{\text{DIVERGE}} \, ✗$$
+
+---
+
+## 💡 Exemplo 4: Caso Inconclusivo
+
+**Determine se a série converge:** $\displaystyle \sum_{n=1}^{\infty} \frac{1}{n^2}$
+
+### Solução Completa:
+
+**Passo 1:** Identificar $a_n$
+$$a_n = \frac{1}{n^2}$$
+
+**Passo 2:** Calcular a raiz n-ésima
+$$\sqrt[n]{a_n} = \sqrt[n]{\frac{1}{n^2}} = \frac{1}{\sqrt[n]{n^2}} = \frac{1}{(\sqrt[n]{n})^2}$$
+
+**Passo 3:** Calcular o limite
+$$\rho = \lim_{n \to \infty} \frac{1}{(\sqrt[n]{n})^2} = \frac{1}{1^2} = 1$$
+
+(Usamos que $\lim_{n \to \infty} \sqrt[n]{n} = 1$)
+
+**Passo 4:** Conclusão
+$$\rho = 1 \implies \text{Teste } \boxed{\text{INCONCLUSIVO}} \, ❓$$
+
+> **Observação:** Esta série converge pelo teste da p-série ($p = 2 > 1$), mas o teste da raiz não consegue determinar isso.
+
+---
+
+## 🎓 Quando Usar o Teste da Raiz?
+
+### ✅ **Situações IDEAIS para usar:**
+
+| Tipo de Série | Exemplo | Por quê? |
+|:-------------|:--------|:---------|
+| **n como expoente** | $\displaystyle \sum \left(\frac{an+b}{cn+d}\right)^n$ | A raiz n-ésima simplifica diretamente |
+| **Exponenciais duplos** | $\displaystyle \sum \frac{a^n}{n^n}$ | Remove as potências de n |
+| **Potências de n no expoente** | $\displaystyle \sum a_n^n$ ou $\sum a_n^{n^2}$ | Raiz extrai o expoente |
+
+### ⚠️ **Situações RUINS para usar:**
+
+| Tipo de Série | Exemplo | Use ao invés: |
+|:-------------|:--------|:--------------|
+| **Fatoriais** | $\displaystyle \sum \frac{a^n}{n!}$ | Teste da Razão |
+| **P-séries** | $\displaystyle \sum \frac{1}{n^p}$ | Teste da p-série |
+| **Alternadas** | $\displaystyle \sum (-1)^n a_n$ | Teste de Leibniz |
+| **Sem n no expoente** | $\displaystyle \sum \frac{n^2}{2^n}$ | Teste da Razão |
+
+---
+
+## 🆚 Teste da Raiz vs Teste da Razão
+
+### Quando escolher entre os dois?
+
+| Critério | Teste da Raiz | Teste da Razão |
+|:--------|:--------------|:---------------|
+| **n no expoente** | ✅ PERFEITO | ❌ Complicado |
+| **Fatoriais** | ❌ Não funciona bem | ✅ PERFEITO |
+| **Simplicidade** | Geralmente mais direto | Pode ser trabalhoso |
+| **Potência geral** | Ambos equivalentes | Ambos equivalentes |
+
+**Regra prática:**
+- Viu **n como expoente**? → Use Teste da Raiz
+- Viu **fatoriais (n!)**? → Use Teste da Razão
+- Em dúvida? → Teste ambos e escolha o mais simples!
+
+---
+
+## 🧮 Exercícios Propostos
+
+Determine se as séries convergem usando o Teste da Raiz:
+
+1. $\displaystyle \sum_{n=1}^{\infty} \left(\frac{n}{2n+1}\right)^n$
+
+2. $\displaystyle \sum_{n=1}^{\infty} \frac{2^n}{n^{2n}}$
+
+3. $\displaystyle \sum_{n=1}^{\infty} \left(\frac{3n+5}{4n-1}\right)^{2n}$
+
+4. $\displaystyle \sum_{n=1}^{\infty} \left(1 - \frac{1}{n}\right)^{n^2}$
+
+---
+
+## 📚 Resumo Visual
+
+```
+                    Teste da Raiz
+                         │
+                         v
+            Calcule ρ = lim(n→∞) ⁿ√aₙ
+                         │
+        ┌────────────────┼────────────────┐
+        │                │                │
+     ρ < 1            ρ = 1            ρ > 1
+        │                │                │
+        v                v                v
+   CONVERGE ✓      INCONCLUSIVO ❓     DIVERGE ✗
+                    (tente outro
+                       teste)
+```
+
+---
+
+## 🔑 Limites Importantes para Memorizar
+
+| Limite | Valor | Quando usar |
+|:-------|:------|:------------|
+| $\displaystyle \lim_{n \to \infty} \sqrt[n]{n}$ | $1$ | Séries com n na base |
+| $\displaystyle \lim_{n \to \infty} \sqrt[n]{n^k}$ | $1$ | Qualquer potência de n |
+| $\displaystyle \lim_{n \to \infty} \sqrt[n]{a}$ | $1$ | Constantes ($a > 0$) |
+| $\displaystyle \lim_{n \to \infty} \left(1 + \frac{a}{n}\right)^n$ | $e^a$ | Forma exponencial especial |
+| $\displaystyle \lim_{n \to \infty} a^{1/n}$ | $1$ | Exponenciais com $1/n$ |
+
+---
+
+## 🎯 Conclusão
+
+O Teste da Raiz é sua **arma secreta** quando n aparece como expoente! Sua principal vantagem é a simplicidade matemática ao lidar com potências de n. Lembre-se:
+
+- ✅ **Use quando:** n está no expoente
+- ✅ **Evite quando:** há fatoriais ou o teste resulta em ρ = 1
+- ✅ **Combine com:** outros testes quando inconclusivo
+
+**Dica de ouro:** Se após calcular $\sqrt[n]{a_n}$ você ainda tem expressões complicadas, provavelmente o Teste da Razão seria melhor! 🌟
+
 # 📌 Teste da Série Alternada  
 
 Considere uma série da forma:
