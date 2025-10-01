@@ -308,6 +308,8 @@ Portanto, o teste do termo n-ésimo **não prova convergência**, apenas diverg�
 
 # ∭ Teste da integral
 
+<img width="880" height="192" alt="Captura de tela 2025-09-29 212456" src="https://github.com/user-attachments/assets/fefd77de-a957-4346-9123-5a04f506744f" />
+
 ![alt text](<Captura de tela 2025-09-29 212456.png>)
 
 
@@ -346,6 +348,8 @@ $$\boxed{\sum_{n=N}^{\infty} a_n \quad \text{e} \quad \int_N^{\infty} f(x) \, dx
 Imagine que você está somando retângulos sob a curva $y = f(x)$:
 
 📊 Visualização Geométrica
+
+<img width="356" height="157" alt="Captura de tela 2025-10-01 160744" src="https://github.com/user-attachments/assets/e9674055-7639-4518-9fde-6081b8abfe9e" />
 
 ```markdown
 
@@ -576,6 +580,7 @@ Use esta lista para verificar cada etapa:
 
 ---
 
+<img width="879" height="249" alt="Captura de tela 2025-09-29 232759" src="https://github.com/user-attachments/assets/4d7d5276-8d7c-4878-a9b0-68f23b632d76" />
 
    ![alt text](image-1.png)
 
@@ -665,6 +670,9 @@ graph TB
 ---
 
 # 🔀 Teste da Comparação
+
+<img width="884" height="269" alt="Captura de tela 2025-09-30 010835" src="https://github.com/user-attachments/assets/4c297f84-6b8b-4107-a378-6dcfa7352629" />
+
 ![alt text](<Captura de tela 2025-09-30 010835.png>)
 
 ## ⚖️ Teorema 10: O Teste da Comparação
@@ -1067,6 +1075,9 @@ Determine se as séries convergem:
 O Teste da Razão é uma ferramenta essencial no estudo de séries infinitas. Sua principal vantagem é a simplicidade de aplicação em séries com fatoriais e exponenciais. Lembre-se: quando o teste resulta em $L = 1$, você precisará usar outros métodos para determinar a convergência!
 
 # Teste da Raiz √
+
+<img width="602" height="172" alt="Captura de tela 2025-10-01 162354" src="https://github.com/user-attachments/assets/2525c308-e2eb-49ec-a3d9-2b990ecd9002" />
+
 
 ## 🌱 O que é o Teste da Raiz?
 
