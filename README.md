@@ -883,7 +883,10 @@ graph TD
 
 ```
 ---
-# Teste da Razão - Guia Completo com Exemplos
+# Teste da Razão 
+
+<img width="603" height="179" alt="image" src="https://github.com/user-attachments/assets/19064022-3743-4779-b71e-17a9577944db" />
+
 
 ## 📐 O que é o Teste da Razão?
 
