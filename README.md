@@ -883,7 +883,7 @@ graph TD
 
 ```
 ---
-# Teste da Razão 
+# 💭Teste da Razão 
 
 <img width="603" height="179" alt="image" src="https://github.com/user-attachments/assets/19064022-3743-4779-b71e-17a9577944db" />
 
@@ -1077,12 +1077,14 @@ Determine se as séries convergem:
 
 O Teste da Razão é uma ferramenta essencial no estudo de séries infinitas. Sua principal vantagem é a simplicidade de aplicação em séries com fatoriais e exponenciais. Lembre-se: quando o teste resulta em $L = 1$, você precisará usar outros métodos para determinar a convergência!
 
-# Teste da Raiz √
+---
+
+# 🌱 Teste da Raiz 
 
 <img width="602" height="172" alt="Captura de tela 2025-10-01 162354" src="https://github.com/user-attachments/assets/2525c308-e2eb-49ec-a3d9-2b990ecd9002" />
 
 
-## 🌱 O que é o Teste da Raiz?
+## √ O que é o Teste da Raiz?
 
 O **Teste da Raiz** (ou Teste de Cauchy) é uma ferramenta para determinar se uma série infinita converge ou diverge. Ele é especialmente poderoso para séries onde **$n$ aparece como expoente**.
 
