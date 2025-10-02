@@ -1495,6 +1495,8 @@ graph TD
 
  -> $\ln(a^n) = n\ln(a)$
 
+ -> $\log(a+b)=\log(b) + \log(1 + \frac{a}{b})$
+
  ---
 
  - ## 📌 p-séries
@@ -1515,6 +1517,20 @@ O comportamento depende apenas do valor de $p$:
 
 - Se $p > 1$, a série **converge**.  
 - Se $0 < p \leq 1$, a série **diverge**.  
+
+---
+
+### Ordem de crescimento de fuções
+
+| Ordem | Função (exemplo)                   | Observação                                                                 |
+|-------|-------------------------------------|----------------------------------------------------------------------------|
+| 1     | $\log n,\; (\log n)^k$              | Crescem mais devagar que qualquer potência de $n$                          |
+| 2     | $n^\alpha$ (polinômios)             | $\alpha > 0$; crescem mais que logaritmos, mas menos que exponenciais      |
+| 3     | $a^n$ (exponenciais)                | $a > 1$; crescem mais que polinômios                                       |
+| 4     | $n!$                                | Cresce mais que qualquer $a^n$; $n! \sim \sqrt{2\pi n}\,\left(\tfrac{n}{e}\right)^n$ (Stirling) |
+| 5     | $n^n$                               | Superexponencial; domina $n!$                                              |
+| 6     | $a^{n \log n} = n^{(\log a)\,n}$    | Ainda maior, baseando-se em expoentes polinomiais                          |
+| 7     | $\underbrace{a^{a^{a^{.^{.^{.^a}}}}}}_{n \text{ vezes}}$ (tetration) | Cresce mais rápido que $n^n$                                               |
 
 ---
 
