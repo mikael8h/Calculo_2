@@ -883,7 +883,7 @@ graph TD
 
 ```
 ---
-# Teste da Razão 
+# 💭Teste da Razão 
 
 <img width="603" height="179" alt="image" src="https://github.com/user-attachments/assets/19064022-3743-4779-b71e-17a9577944db" />
 
@@ -1077,12 +1077,14 @@ Determine se as séries convergem:
 
 O Teste da Razão é uma ferramenta essencial no estudo de séries infinitas. Sua principal vantagem é a simplicidade de aplicação em séries com fatoriais e exponenciais. Lembre-se: quando o teste resulta em $L = 1$, você precisará usar outros métodos para determinar a convergência!
 
-# Teste da Raiz √
+---
+
+# 🌱 Teste da Raiz 
 
 <img width="602" height="172" alt="Captura de tela 2025-10-01 162354" src="https://github.com/user-attachments/assets/2525c308-e2eb-49ec-a3d9-2b990ecd9002" />
 
 
-## 🌱 O que é o Teste da Raiz?
+## √ O que é o Teste da Raiz?
 
 O **Teste da Raiz** (ou Teste de Cauchy) é uma ferramenta para determinar se uma série infinita converge ou diverge. Ele é especialmente poderoso para séries onde **$n$ aparece como expoente**.
 
@@ -1493,6 +1495,8 @@ graph TD
 
  -> $\ln(a^n) = n\ln(a)$
 
+ -> $\log(a+b)=\log(b) + \log(1 + \frac{a}{b})$
+
  ---
 
  - ## 📌 p-séries
@@ -1513,6 +1517,20 @@ O comportamento depende apenas do valor de $p$:
 
 - Se $p > 1$, a série **converge**.  
 - Se $0 < p \leq 1$, a série **diverge**.  
+
+---
+
+### Ordem de crescimento de fuções
+
+| Ordem | Função (exemplo)                   | Observação                                                                 |
+|-------|-------------------------------------|----------------------------------------------------------------------------|
+| 1     | $\log n,\; (\log n)^k$              | Crescem mais devagar que qualquer potência de $n$                          |
+| 2     | $n^\alpha$ (polinômios)             | $\alpha > 0$; crescem mais que logaritmos, mas menos que exponenciais      |
+| 3     | $a^n$ (exponenciais)                | $a > 1$; crescem mais que polinômios                                       |
+| 4     | $n!$                                | Cresce mais que qualquer $a^n$; $n! \sim \sqrt{2\pi n}\,\left(\tfrac{n}{e}\right)^n$ (Stirling) |
+| 5     | $n^n$                               | Superexponencial; domina $n!$                                              |
+| 6     | $a^{n \log n} = n^{(\log a)\,n}$    | Ainda maior, baseando-se em expoentes polinomiais                          |
+| 7     | $\underbrace{a^{a^{a^{.^{.^{.^a}}}}}}_{n \text{ vezes}}$ (tetration) | Cresce mais rápido que $n^n$                                               |
 
 ---
 
