@@ -1485,6 +1485,247 @@ graph TD
     H --> I["Convergência ∀ x ∈ ℝ"]
 ```
 
+---
+
+## Equações Diferenciais Ordinárias
+## Fator Integrante — Explicação Completa
+
+O **fator integrante** é uma técnica clássica para resolver **equações diferenciais lineares de 1ª ordem** do tipo:
+
+$$
+y' + P(x)y = Q(x)
+$$
+
+onde $P(x)$ e $Q(x)$ são funções conhecidas de $x$.
+
+---
+
+### 1. Forma padrão
+
+Antes de aplicar o método, é fundamental escrever a EDO nesta forma:
+
+$$
+y' + P(x)y = Q(x)
+$$
+
+**Exemplo:**
+
+$$
+y' + 2y = e^{-x}
+$$
+
+Aqui:
+- $P(x) = 2$
+- $Q(x) = e^{-x}$
+
+---
+
+### 2. Ideia do fator integrante
+
+Queremos multiplicar toda a equação por uma função $\mu(x)$ (chamada **fator integrante**) de modo que o lado esquerdo vire uma **derivada de um produto**:
+
+$$
+\mu(x)y' + \mu(x)P(x)y = \frac{d}{dx}[\mu(x)y]
+$$
+
+---
+
+### 3. Como encontrar $\mu(x)$
+
+Pela **regra do produto**, sabemos que:
+
+$$
+\frac{d}{dx}[\mu(x)y] = \mu'(x)y + \mu(x)y'
+$$
+
+Comparando com o lado esquerdo da EDO multiplicada ($\mu(x)y' + \mu(x)P(x)y$), percebemos que os termos serão idênticos **se**:
+
+$$
+\mu'(x) = \mu(x)P(x)
+$$
+
+---
+
+### 4. Resolvendo para $\mu(x)$
+
+Essa é uma EDO separável:
+
+$$
+\frac{\mu'(x)}{\mu(x)} = P(x)
+$$
+
+Separando e integrando ambos os lados:
+
+$$
+\int \frac{\mu'(x)}{\mu(x)}dx = \int P(x)\,dx
+$$
+
+Sabemos pela **regra da derivada do logaritmo natural** que:
+
+$$
+\frac{d}{dx}[\ln(\mu)] = \frac{\mu'(x)}{\mu(x)}
+$$
+
+Logo, ao integrar, obtemos:
+
+$$
+\ln|\mu| = \int P(x)\,dx + C
+$$
+
+Exponenciando ambos os lados:
+
+$$
+\mu(x) = e^{\int P(x)\,dx + C} = e^{C} \cdot e^{\int P(x)\,dx}
+$$
+
+Como $e^C$ é uma constante multiplicativa, podemos ignorá-la (ou tomá-la igual a 1):
+
+$$
+\boxed{\mu(x) = e^{\int P(x)\,dx}}
+$$
+
+---
+
+### 5. Aplicando o fator integrante
+
+Multiplicamos toda a EDO original por $\mu(x)$:
+
+$$
+\mu(x)y' + \mu(x)P(x)y = \mu(x)Q(x)
+$$
+
+O lado esquerdo agora é a **derivada de um produto**:
+
+$$
+\frac{d}{dx}[\mu(x)y] = \mu(x)Q(x)
+$$
+
+Integrando ambos os lados:
+
+$$
+\mu(x)y = \int \mu(x)Q(x)\,dx + C
+$$
+
+E finalmente isolamos $y(x)$:
+
+$$
+\boxed{y(x) = \frac{1}{\mu(x)}\left(\int \mu(x)Q(x)\,dx + C\right)}
+$$
+
+---
+
+### 6. Exemplo completo
+
+Dada a EDO:
+
+$$
+y' + 2y = e^{-x}
+$$
+
+Temos $P(x) = 2$ e $Q(x) = e^{-x}$.
+
+1. **Calcula o fator integrante:**
+
+   $$
+   \mu(x) = e^{\int 2dx} = e^{2x}
+   $$
+
+2. **Multiplica a EDO por $\mu(x)$:**
+
+   $$
+   e^{2x}y' + 2e^{2x}y = e^{x}
+   $$
+
+3. **Reconhece a derivada de um produto:**
+
+   $$
+   \frac{d}{dx}(e^{2x}y) = e^{x}
+   $$
+
+4. **Integra ambos os lados:**
+
+   $$
+   e^{2x}y = \int e^{x}\,dx = e^{x} + C
+   $$
+
+5. **Isola $y$:**
+
+   $$
+   y = e^{-x} + Ce^{-2x}
+   $$
+
+---
+
+### 7. Regra geral da derivada do logaritmo natural
+
+Se $f(x)$ é uma função derivável e **positiva**, então:
+
+$$
+\boxed{\frac{d}{dx}[\ln(f(x))] = \frac{f'(x)}{f(x)}}
+$$
+
+> Essa regra vale para **qualquer função diferenciável positiva** $f(x)$.
+
+Versão mais geral (válida mesmo se $f(x) < 0$):
+
+$$
+\frac{d}{dx}[\ln|f(x)|] = \frac{f'(x)}{f(x)}
+$$
+
+---
+
+### Intuição
+
+- $\ln(x)$ tem derivada $1/x$.
+- $\ln(f(x))$ é a composição de $\ln$ com $f(x)$, então usamos a **regra da cadeia**:
+  
+  $$
+  \frac{d}{dx}[\ln(f(x))] = \frac{1}{f(x)} \cdot f'(x)
+  $$
+
+---
+
+#### Exemplos
+
+1. $f(x) = x^2 + 1$
+   $$
+   \frac{d}{dx}[\ln(x^2 + 1)] = \frac{2x}{x^2 + 1}
+   $$
+
+2. $f(x) = e^{3x} + 5$
+   $$
+   \frac{d}{dx}[\ln(e^{3x} + 5)] = \frac{3e^{3x}}{e^{3x} + 5}
+   $$
+
+---
+
+### 8. Resumo — Fórmulas principais
+
+| Etapa | Ação | Resultado |
+|:------|:------|:-----------|
+| 1 | Escrever a EDO na forma padrão | $y' + P(x)y = Q(x)$ |
+| 2 | Calcular o fator integrante | $\mu(x) = e^{\int P(x)\,dx}$ |
+| 3 | Multiplicar a EDO por $\mu(x)$ | Lado esquerdo vira $\frac{d}{dx}[\mu(x)y]$ |
+| 4 | Integrar | $\mu(x)y = \int \mu(x)Q(x)\,dx + C$ |
+| 5 | Isolar $y$ | $y = \frac{1}{\mu(x)}\left(\int \mu(x)Q(x)\,dx + C\right)$ |
+
+---
+
+## 🧭 9. Algoritmo para resolver EDO linear de 1ª ordem
+
+**Entrada:** EDO na forma $y' + P(x)y = Q(x)$
+```mermaid
+graph TD
+    A["Identifique P(x) e Q(x)"] --> B["Calcule o fator integrante μ(x)"]
+    B --> C["μ(x) = e^(∫P(x) dx)"]
+    C --> D["Multiplique toda a EDO por μ(x)"]
+    D --> E["Reconheça que o lado esquerdo é (μy)'"]
+    E --> F["Integre ambos os lados: μy = ∫μQ dx + C"]
+    F --> G["Resolva y = (1/μ(x)) * (∫μQ dx + C)"]
+    G --> H["Saída: Solução geral y(x)"]
+```
+---
+
  # 💡 Informações pertinentes:
 
  - Regras basicas de lgarítmo:
