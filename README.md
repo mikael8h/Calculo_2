@@ -1487,7 +1487,7 @@ graph TD
 
 ---
 
-## Equações Diferenciais Ordinárias
+# Equações Diferenciais Ordinárias
 ## Fator Integrante — Explicação Completa
 
 O **fator integrante** é uma técnica clássica para resolver **equações diferenciais lineares de 1ª ordem** do tipo:
@@ -1525,7 +1525,7 @@ Aqui:
 Queremos multiplicar toda a equação por uma função $\mu(x)$ (chamada **fator integrante**) de modo que o lado esquerdo vire uma **derivada de um produto**:
 
 $$
-\mu(x)y' + \mu(x)P(x)y = \frac{d}{dx}[\mu(x)y]
+mu(x)y' + \mu(x)P(x)y = \frac{d}{dx}[\mu(x)y]
 $$
 
 ---
@@ -1535,13 +1535,13 @@ $$
 Pela **regra do produto**, sabemos que:
 
 $$
-\frac{d}{dx}[\mu(x)y] = \mu'(x)y + \mu(x)y'
+frac{d}{dx}[\mu(x)y] = \mu'(x)y + \mu(x)y'
 $$
 
 Comparando com o lado esquerdo da EDO multiplicada ($\mu(x)y' + \mu(x)P(x)y$), percebemos que os termos serão idênticos **se**:
 
 $$
-\mu'(x) = \mu(x)P(x)
+mu'(x) = \mu(x)P(x)
 $$
 
 ---
@@ -1569,13 +1569,13 @@ $$
 Logo, ao integrar, obtemos:
 
 $$
-\ln|\mu| = \int P(x)\,dx + C
+ln|\mu| = \int P(x)\,dx + C
 $$
 
 Exponenciando ambos os lados:
 
 $$
-\mu(x) = e^{\int P(x)\,dx + C} = e^{C} \cdot e^{\int P(x)\,dx}
+mu(x) = e^{\int P(x)\,dx + C} = e^{C} \cdot e^{\int P(x)\,dx}
 $$
 
 Como $e^C$ é uma constante multiplicativa, podemos ignorá-la (ou tomá-la igual a 1):
@@ -1626,33 +1626,33 @@ Temos $P(x) = 2$ e $Q(x) = e^{-x}$.
 
 1. **Calcula o fator integrante:**
 
-   $$
-   \mu(x) = e^{\int 2dx} = e^{2x}
-   $$
+$$
+\mu(x) = e^{\int 2dx} = e^{2x}
+$$
 
 2. **Multiplica a EDO por $\mu(x)$:**
 
-   $$
-   e^{2x}y' + 2e^{2x}y = e^{x}
-   $$
+$$
+e^{2x}y' + 2e^{2x}y = e^{x}
+$$
 
 3. **Reconhece a derivada de um produto:**
 
-   $$
-   \frac{d}{dx}(e^{2x}y) = e^{x}
-   $$
+$$
+frac{d}{dx}(e^{2x}y) = e^{x}
+$$
 
 4. **Integra ambos os lados:**
 
-   $$
-   e^{2x}y = \int e^{x}\,dx = e^{x} + C
-   $$
+$$
+e^{2x}y = \int e^{x}\,dx = e^{x} + C
+$$
 
 5. **Isola $y$:**
 
-   $$
-   y = e^{-x} + Ce^{-2x}
-   $$
+$$
+y = e^{-x} + Ce^{-2x}
+$$
 
 ---
 
@@ -1679,23 +1679,25 @@ $$
 - $\ln(x)$ tem derivada $1/x$.
 - $\ln(f(x))$ é a composição de $\ln$ com $f(x)$, então usamos a **regra da cadeia**:
   
-  $$
-  \frac{d}{dx}[\ln(f(x))] = \frac{1}{f(x)} \cdot f'(x)
-  $$
+$$
+\frac{d}{dx}[\ln(f(x))] = \frac{1}{f(x)} \cdot f'(x)
+$$
 
 ---
 
 #### Exemplos
 
 1. $f(x) = x^2 + 1$
-   $$
-   \frac{d}{dx}[\ln(x^2 + 1)] = \frac{2x}{x^2 + 1}
-   $$
 
-2. $f(x) = e^{3x} + 5$
-   $$
-   \frac{d}{dx}[\ln(e^{3x} + 5)] = \frac{3e^{3x}}{e^{3x} + 5}
-   $$
+$$
+\frac{d}{dx}[\ln(x^2 + 1)] = \frac{2x}{x^2 + 1}
+$$
+
+3. $f(x) = e^{3x} + 5$
+   
+$$
+\frac{d}{dx}[\ln(e^{3x} + 5)] = \frac{3e^{3x}}{e^{3x} + 5}
+$$
 
 ---
 
