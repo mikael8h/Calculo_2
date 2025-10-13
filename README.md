@@ -1961,3 +1961,195 @@ $\Downarrow \leq \quad\quad\quad \Downarrow \leq \quad\quad\quad \Downarrow \leq
 $\boxed{a_N} \xrightarrow{\times r} \boxed{ra_N} \xrightarrow{\times r} \boxed{r^2a_N} \xrightarrow{\times r} \boxed{r^3a_N} \xrightarrow{\times r} \cdots$
 
 A série de baixo (geométrica com $r < 1$) converge e domina a série de cima!
+
+---
+## Técnicas de Integração
+
+### 1. Integração por Substituição
+
+A **integração por substituição** é o inverso da regra da cadeia. A ideia é transformar uma integral complicada em uma mais simples através de uma mudança de variável.
+
+### Fórmula
+
+Se $u = g(x)$, então $du = g'(x)dx$, e:
+
+$$
+\int f(g(x)) \cdot g'(x)\,dx = \int f(u)\,du
+$$
+
+### Passo a passo:
+
+1. **Identifique uma função interna** $u = g(x)$ cuja derivada apareça (ou quase apareça) no integrando
+2. **Calcule a diferencial:** $du = g'(x)dx$
+3. **Substitua** na integral original
+4. **Resolva** a nova integral em termos de $u$
+5. **Volte para a variável original** substituindo $u$ por $g(x)$
+
+### Exemplo 1: Integral direta
+
+Calcule: $\displaystyle \int 2x \cos(x^2)\,dx$
+
+**Solução:**
+
+- Escolha: $u = x^2$
+- Então: $du = 2x\,dx$
+- Substituindo: $\displaystyle \int \cos(u)\,du = \sin(u) + C$
+- Voltando: $\boxed{\sin(x^2) + C}$
+
+### Exemplo 2: Ajustando constantes
+
+Calcule: $\displaystyle \int x \cos(x^2)\,dx$
+
+**Solução:**
+
+- Escolha: $u = x^2$
+- Então: $du = 2x\,dx \Rightarrow x\,dx = \frac{1}{2}du$
+- Substituindo: $\displaystyle \int \cos(u) \cdot \frac{1}{2}\,du = \frac{1}{2}\sin(u) + C$
+- Voltando: $\boxed{\frac{1}{2}\sin(x^2) + C}$
+
+### Exemplo 3: Com exponencial
+
+Calcule: $\displaystyle \int \frac{e^{\sqrt{x}}}{\sqrt{x}}\,dx$
+
+**Solução:**
+
+- Escolha: $u = \sqrt{x}$
+- Então: $du = \frac{1}{2\sqrt{x}}dx \Rightarrow \frac{dx}{\sqrt{x}} = 2du$
+- Substituindo: $\displaystyle \int e^u \cdot 2\,du = 2e^u + C$
+- Voltando: $\boxed{2e^{\sqrt{x}} + C}$
+
+---
+
+## 2. Integração por Partes
+
+A **integração por partes** é o inverso da regra do produto. É útil quando o integrando é um produto de duas funções.
+
+### Fórmula
+
+$$
+\boxed{\int u\,dv = uv - \int v\,du}
+$$
+
+Ou equivalentemente:
+
+$$
+\int u(x)v'(x)\,dx = u(x)v(x) - \int u'(x)v(x)\,dx
+$$
+
+### Como escolher $u$ e $dv$?
+
+Use a regra **LIATE** (ordem de prioridade para escolher $u$):
+
+1. **L**ogarítmicas: $\ln(x)$
+2. **I**nversas trigonométricas: $\arctan(x)$, $\arcsin(x)$
+3. **A**lgébricas: $x^n$, polinômios
+4. **T**rigonométricas: $\sin(x)$, $\cos(x)$
+5. **E**xponenciais: $e^x$
+
+Escolha $u$ como a função que aparece **primeiro** nesta lista, e $dv$ como o resto.
+
+### Passo a passo:
+
+1. **Escolha** $u$ e $dv$ usando LIATE
+2. **Calcule** $du$ (derivando $u$) e $v$ (integrando $dv$)
+3. **Aplique a fórmula:** $\int u\,dv = uv - \int v\,du$
+4. **Resolva** a nova integral $\int v\,du$
+5. **Simplifique** o resultado
+
+### Exemplo 1: Polinômio × Exponencial
+
+Calcule: $\displaystyle \int x e^x\,dx$
+
+**Solução:**
+
+- $u = x$ (algébrica) → $du = dx$
+- $dv = e^x\,dx$ (exponencial) → $v = e^x$
+
+Aplicando:
+$$
+\int x e^x\,dx = x \cdot e^x - \int e^x\,dx = xe^x - e^x + C
+$$
+
+$$
+\boxed{e^x(x-1) + C}
+$$
+
+### Exemplo 2: Polinômio × Trigonométrica
+
+Calcule: $\displaystyle \int x \sin(x)\,dx$
+
+**Solução:**
+
+- $u = x$ → $du = dx$
+- $dv = \sin(x)\,dx$ → $v = -\cos(x)$
+
+Aplicando:
+$$
+\int x \sin(x)\,dx = -x\cos(x) - \int (-\cos(x))\,dx
+$$
+$$
+= -x\cos(x) + \int \cos(x)\,dx = -x\cos(x) + \sin(x) + C
+$$
+
+$$
+\boxed{-x\cos(x) + \sin(x) + C}
+$$
+
+### Exemplo 3: Logaritmo
+
+Calcule: $\displaystyle \int \ln(x)\,dx$
+
+**Solução:**
+
+- $u = \ln(x)$ (logarítmica) → $du = \frac{1}{x}dx$
+- $dv = dx$ → $v = x$
+
+Aplicando:
+$$
+\int \ln(x)\,dx = x\ln(x) - \int x \cdot \frac{1}{x}\,dx
+$$
+$$
+= x\ln(x) - \int 1\,dx = x\ln(x) - x + C
+$$
+
+$$
+\boxed{x\ln(x) - x + C}
+$$
+
+### Exemplo 4: Duas aplicações (polinômio de grau maior)
+
+Calcule: $\displaystyle \int x^2 e^x\,dx$
+
+**Primeira aplicação:**
+- $u = x^2$ → $du = 2x\,dx$
+- $dv = e^x\,dx$ → $v = e^x$
+
+$$
+\int x^2 e^x\,dx = x^2e^x - \int 2xe^x\,dx
+$$
+
+**Segunda aplicação** (para $\int 2xe^x\,dx$):
+- $u = 2x$ → $du = 2\,dx$
+- $dv = e^x\,dx$ → $v = e^x$
+
+$$
+\int 2xe^x\,dx = 2xe^x - \int 2e^x\,dx = 2xe^x - 2e^x
+$$
+
+**Resultado final:**
+$$
+\boxed{x^2e^x - 2xe^x + 2e^x + C = e^x(x^2 - 2x + 2) + C}
+$$
+
+---
+
+## Resumo Comparativo
+
+| **Método** | **Quando usar** | **Forma** |
+|:-----------|:----------------|:----------|
+| **Substituição** | Composição de funções, regra da cadeia "ao contrário" | $\int f(g(x))g'(x)\,dx$ |
+| **Por Partes** | Produto de funções de tipos diferentes | $\int u\,dv = uv - \int v\,du$ |
+
+**Dica:** Às vezes é necessário combinar ambas as técnicas para resolver uma integral!
+
+
