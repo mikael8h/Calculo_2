@@ -2066,6 +2066,7 @@ Calcule: $\displaystyle \int x e^x\,dx$
 - $dv = e^x\,dx$ (exponencial) → $v = e^x$
 
 Aplicando:
+
 $$
 \int x e^x\,dx = x \cdot e^x - \int e^x\,dx = xe^x - e^x + C
 $$
@@ -2084,6 +2085,7 @@ Calcule: $\displaystyle \int x \sin(x)\,dx$
 - $dv = \sin(x)\,dx$ → $v = -\cos(x)$
 
 Aplicando:
+
 $$
 \int x \sin(x)\,dx = -x\cos(x) - \int (-\cos(x))\,dx
 $$
@@ -2105,6 +2107,7 @@ Calcule: $\displaystyle \int \ln(x)\,dx$
 - $dv = dx$ → $v = x$
 
 Aplicando:
+
 $$
 \int \ln(x)\,dx = x\ln(x) - \int x \cdot \frac{1}{x}\,dx
 $$
@@ -2137,6 +2140,7 @@ $$
 $$
 
 **Resultado final:**
+
 $$
 \boxed{x^2e^x - 2xe^x + 2e^x + C = e^x(x^2 - 2x + 2) + C}
 $$
