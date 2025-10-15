@@ -1535,7 +1535,7 @@ $$
 Pela **regra do produto**, sabemos que:
 
 $$
-frac{d}{dx}[\mu(x)y] = \mu'(x)y + \mu(x)y'
+\frac{d}{dx}[\mu(x)y] = \mu'(x)y + \mu(x)y'
 $$
 
 Comparando com o lado esquerdo da EDO multiplicada ($\mu(x)y' + \mu(x)P(x)y$), percebemos que os termos serão idênticos **se**:
@@ -1639,7 +1639,7 @@ $$
 3. **Reconhece a derivada de um produto:**
 
 $$
-frac{d}{dx}(e^{2x}y) = e^{x}
+\frac{d}{dx}(e^{2x}y) = e^{x}
 $$
 
 4. **Integra ambos os lados:**
