@@ -1,0 +1,38 @@
+graph TD
+    A[Série: Σ aₙ] --> B[PASSO 1: Definir f x]
+    
+    B --> C{PASSO 2a<br/>f contínua?}
+    C -->|Não| Z1[Escolha<br/>outro teste]
+    C -->|Sim| D{PASSO 2b<br/>f x maior 0?}
+    
+    D -->|Não| Z2[Escolha<br/>outro teste]
+    D -->|Sim| E{PASSO 2c<br/>f decrescente?}
+    
+    E -->|Não| Z3[Escolha<br/>outro teste]
+    E -->|Sim| F[PASSO 3: Calcular integral]
+    
+    F --> G[Aplicar limite<br/>quando t tende infinito]
+    
+    G --> H{Limite<br/>é finito?}
+    
+    H -->|Sim| I[✅ Integral<br/>CONVERGE]
+    H -->|Não| J[❌ Integral<br/>DIVERGE]
+    
+    I --> K[✅ SÉRIE<br/>CONVERGE]
+    J --> L[❌ SÉRIE<br/>DIVERGE]
+    
+    style A fill:#ffffff,stroke:#000000,stroke-width:3px,color:#000000
+    style B fill:#f0f0f0,stroke:#000000,stroke-width:2px,color:#000000
+    style C fill:#ffffff,stroke:#000000,stroke-width:2px,color:#000000
+    style D fill:#ffffff,stroke:#000000,stroke-width:2px,color:#000000
+    style E fill:#ffffff,stroke:#000000,stroke-width:2px,color:#000000
+    style F fill:#f0f0f0,stroke:#000000,stroke-width:2px,color:#000000
+    style G fill:#f0f0f0,stroke:#000000,stroke-width:2px,color:#000000
+    style H fill:#ffffff,stroke:#000000,stroke-width:2px,color:#000000
+    style Z1 fill:#e0e0e0,stroke:#000000,stroke-width:2px,color:#000000
+    style Z2 fill:#e0e0e0,stroke:#000000,stroke-width:2px,color:#000000
+    style Z3 fill:#e0e0e0,stroke:#000000,stroke-width:2px,color:#000000
+    style I fill:#cccccc,stroke:#000000,stroke-width:2px,color:#000000
+    style J fill:#cccccc,stroke:#000000,stroke-width:2px,color:#000000
+    style K fill:#a0a0a0,stroke:#000000,stroke-width:3px,color:#000000
+    style L fill:#808080,stroke:#000000,stroke-width:3px,color:#000000
