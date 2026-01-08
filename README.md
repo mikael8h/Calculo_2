@@ -1,6 +1,6 @@
 
 # Calculo 2
-> Materiais de estudo e explicações baseado no livro Calculo vol. 2 de George Thomas. Nada muito sério e específico
+> Materiais de estudo e explicações baseado no livro Calculo vol. 2 de George Thomas e IA. Nada muito sério e específico, >> a maior parte deste material foi feito usando IA <<
 ------
 
 
