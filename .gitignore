@@ -1,0 +1,24 @@
+# ===== Materiais privados =====
+C2/livros/
+
+# ===== PDFs (opcional) =====
+# *.pdf
+
+# ===== C++ =====
+*.o
+*.out
+*.exe
+build/
+bin/
+
+# ===== Temporários =====
+*.tmp
+*.log
+
+# ===== Sistema =====
+.DS_Store
+Thumbs.db
+
+# ===== Editor =====
+.vscode/
+
